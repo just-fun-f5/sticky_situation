@@ -1,2 +1,2 @@
-# sticky_sitaution
+# sticky_situation
 Slime Game
