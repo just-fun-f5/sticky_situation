@@ -5,3 +5,7 @@ fun.Saltar() -> int:
 {
 	return saltar;
 }
+fun.Cagar() -> int:
+{
+	return caca;
+}
