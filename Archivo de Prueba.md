@@ -9,3 +9,7 @@ fun.Cagar() -> int:
 {
 	return caca;
 }
+fun.foo() -> void:
+{
+	return bar;
+}
