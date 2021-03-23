@@ -11,3 +11,7 @@ fun.Cagar() -> int:
 	baño.add(caca);
 	return baño;
 }
+fun.foo() -> void:
+{
+	return bar;
+}
