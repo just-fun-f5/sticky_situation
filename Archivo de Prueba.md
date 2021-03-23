@@ -7,5 +7,7 @@ fun.Saltar() -> int:
 }
 fun.Cagar() -> int:
 {
-	return caca;
+	var baño = MyBaño();
+	baño.add(caca);
+	return baño;
 }
