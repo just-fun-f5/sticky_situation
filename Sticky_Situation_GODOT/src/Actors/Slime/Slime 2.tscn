@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Actors/Slime/Slime2Animation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Slime/Slime 2.gd" type="Script" id=2]
+[ext_resource path="res://src/Actors/Slime/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://src/Actors/Slime/SlimeFSM.gd" type="Script" id=4]
+[ext_resource path="res://src/Actors/Slime/Label.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.96073, 5.70469 )
+
+[node name="Slime2" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="SlimeNode" type="Node2D" parent="."]
+
+[node name="Slime2Animation" parent="SlimeNode" instance=ExtResource( 1 )]
+position = Vector2( -1, 5.1354 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -1, 0 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_bottom = 200
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource( 3 )
+
+[node name="SlimeFSM" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="SlimeFSM"]
+margin_left = -35.4794
+margin_top = -24.0045
+margin_right = 35.5206
+margin_bottom = -10.0045
+text = "test"
+align = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallRaycast" type="Node2D" parent="."]
+
+[node name="RightWallRaycasts" type="Node2D" parent="WallRaycast"]
+
+[node name="RightWallRaycast" type="RayCast2D" parent="WallRaycast/RightWallRaycasts"]
+position = Vector2( 7.0169, 0 )
+rotation = -1.5708
+scale = Vector2( 0.5, 1 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+
+[node name="LeftWallRaycasts" type="Node2D" parent="WallRaycast"]
+position = Vector2( -1, 0 )
+
+[node name="LefttWallRaycast" type="RayCast2D" parent="WallRaycast/LeftWallRaycasts"]
+position = Vector2( -6.01403, 0 )
+rotation = 1.5708
+scale = Vector2( 0.5, 1 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+
+[node name="WallSlideCooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="WallSlideStickyTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+[connection signal="timeout" from="WallSlideStickyTimer" to="SlimeFSM" method="_on_WallSlideStickyTimer_timeout"]

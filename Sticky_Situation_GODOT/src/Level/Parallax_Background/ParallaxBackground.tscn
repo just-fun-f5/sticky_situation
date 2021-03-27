@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/art/backgrounds/Cave/background4a.png" type="Texture" id=1]
+[ext_resource path="res://assets/art/backgrounds/Cave/background2.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/backgrounds/Cave/background1.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/backgrounds/Cave/background3.png" type="Texture" id=4]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="background1" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1, -264 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.2, 0 )
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="background2" type="Sprite" parent="ParallaxLayer2"]
+position = Vector2( 0, -264 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.3, 0 )
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="background3" type="Sprite" parent="ParallaxLayer3"]
+position = Vector2( 0.062561, -264 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 0 )
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="background4a" type="Sprite" parent="ParallaxLayer4"]
+position = Vector2( 0, -264 )
+texture = ExtResource( 1 )
+centered = false
