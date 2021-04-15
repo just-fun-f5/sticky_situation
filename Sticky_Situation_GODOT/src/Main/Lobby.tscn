@@ -1,0 +1,203 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Multiplayer/Lobby.gd" type="Script" id=1]
+[ext_resource path="res://src/Level/Parallax_Background/ParallaxBackground.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -172.0
+margin_top = -100.0
+margin_right = 172.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connect" type="VBoxContainer" parent="CanvasLayer/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -44.0
+margin_right = 125.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 250, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Connect"]
+margin_right = 250.0
+margin_bottom = 14.0
+text = "Name:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Connect"]
+margin_top = 18.0
+margin_right = 250.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="LineEdit" parent="CanvasLayer/Panel/Connect/HBoxContainer"]
+margin_right = 186.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Player"
+
+[node name="Host" type="Button" parent="CanvasLayer/Panel/Connect/HBoxContainer"]
+margin_left = 190.0
+margin_right = 250.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 60, 0 )
+text = "Host"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/Connect"]
+margin_top = 46.0
+margin_right = 250.0
+margin_bottom = 60.0
+text = "IP:"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/Connect"]
+margin_top = 64.0
+margin_right = 250.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IP" type="LineEdit" parent="CanvasLayer/Panel/Connect/HBoxContainer2"]
+margin_right = 186.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "127.0.0.1"
+
+[node name="Join" type="Button" parent="CanvasLayer/Panel/Connect/HBoxContainer2"]
+margin_left = 190.0
+margin_right = 250.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 60, 0 )
+text = "Join"
+
+[node name="Error" type="Label" parent="CanvasLayer/Panel/Connect"]
+modulate = Color( 1, 0, 1, 1 )
+margin_top = 92.0
+margin_right = 250.0
+margin_bottom = 106.0
+align = 1
+
+[node name="Waiting" type="VBoxContainer" parent="CanvasLayer/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -154.0
+margin_top = -75.0
+margin_right = 136.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 250, 150 )
+rect_scale = Vector2( 1.04796, 0.953839 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopSection" type="HBoxContainer" parent="CanvasLayer/Panel/Waiting"]
+margin_right = 290.0
+margin_bottom = 20.0
+alignment = 2
+
+[node name="Exit" type="Button" parent="CanvasLayer/Panel/Waiting/TopSection"]
+material = SubResource( 2 )
+margin_left = 271.0
+margin_right = 290.0
+margin_bottom = 20.0
+text = "x"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Waiting"]
+margin_top = 24.0
+margin_right = 290.0
+margin_bottom = 38.0
+text = "Players:"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Panel/Waiting"]
+margin_top = 42.0
+margin_right = 290.0
+margin_bottom = 106.0
+rect_clip_content = true
+size_flags_vertical = 3
+
+[node name="Players" type="VBoxContainer" parent="CanvasLayer/Panel/Waiting/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 283.0
+margin_bottom = 57.0
+rect_clip_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Waiting"]
+margin_top = 110.0
+margin_right = 290.0
+margin_bottom = 150.0
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_styles/separator = SubResource( 1 )
+
+[node name="Ready" type="CheckButton" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
+margin_left = 8.0
+margin_right = 153.0
+margin_bottom = 40.0
+text = "Not Ready"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
+margin_left = 157.0
+margin_right = 161.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_styles/separator = SubResource( 1 )
+
+[node name="Slime" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
+margin_left = 165.0
+margin_right = 213.0
+margin_bottom = 40.0
+text = "Slime"
+
+[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
+margin_left = 217.0
+margin_right = 221.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_styles/separator = SubResource( 1 )
+
+[node name="Prisoner" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
+margin_left = 225.0
+margin_right = 290.0
+margin_bottom = 40.0
+text = "Prisoner"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+offset = Vector2( 0, 400 )
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 400 )
+follow_viewport_enable = true
+[connection signal="toggled" from="CanvasLayer/Panel/Waiting/HBoxContainer/Ready" to="." method="_on_Ready_toggled"]

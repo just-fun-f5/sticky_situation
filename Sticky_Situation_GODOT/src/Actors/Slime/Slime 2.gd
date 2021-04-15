@@ -38,6 +38,13 @@ func _ready():
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
 
+# Configure for multiplayer
+func init(nid):
+	set_network_master(nid)
+	var info = Game.players[nid]
+	$Name.text = info["name"]
+	name = str(nid)
+
 func _update_move_direction():
 	move_direction = -int(Input.is_action_pressed("move_left")) + int(Input.is_action_pressed("move_right"))
 

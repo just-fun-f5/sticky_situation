@@ -21,8 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Sticky Situation Godot"
-run/main_scene="res://src/Main/DEBBUG_SLIME.tscn"
+run/main_scene="res://src/Main/Lobby.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://src/Multiplayer/Game.gd"
 
 [display]
 
