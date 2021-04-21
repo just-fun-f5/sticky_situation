@@ -9,12 +9,14 @@ func _ready() -> void:
 	Game.connect("player_disconnected", self, "_end_game_id")
 	Game.connect("server_disconnected", self, "_end_game")
 	
-	if Game.players.keys().size() >= 1:
-		var nid = Game.players.keys()[0]
-		create_slime(nid)
-		if Game.players.keys().size() >= 2:
-			nid = Game.players.keys()[1]	
-			create_prisoner(nid)
+	for nid in Game.players.keys():
+		var player_info = Game.players[nid]
+		#print(player_info["slot"])
+		if player_info["player_type"] == Game.SLIME:
+			var player = create_slime(nid)
+		else:
+			var player = create_prisoner(nid)
+		
 
 
 func _end_game_id(id):
@@ -25,7 +27,8 @@ func _end_game():
 	get_tree().change_scene("res://scenes/Lobby.tscn")
 
 func create_prisoner(nid):
-	var prisoner = Prisoner.instance()
+	#var prisoner = Prisoner.instance()
+	var prisoner = Slime.instance()
 	prisoner.init(nid)
 	prisoner.global_position = $Positions.get_child(1).global_position
 	$Players.add_child(prisoner)

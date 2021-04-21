@@ -3,9 +3,9 @@
 [ext_resource path="res://src/Multiplayer/Lobby.gd" type="Script" id=1]
 [ext_resource path="res://src/Level/Parallax_Background/ParallaxBackground.tscn" type="PackedScene" id=2]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="Lobby" type="Node2D"]
 script = ExtResource( 1 )
@@ -100,6 +100,7 @@ margin_bottom = 106.0
 align = 1
 
 [node name="Waiting" type="VBoxContainer" parent="CanvasLayer/Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -120,7 +121,7 @@ margin_bottom = 20.0
 alignment = 2
 
 [node name="Exit" type="Button" parent="CanvasLayer/Panel/Waiting/TopSection"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_left = 271.0
 margin_right = 290.0
 margin_bottom = 20.0
@@ -155,7 +156,7 @@ margin_bottom = 150.0
 margin_right = 4.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_styles/separator = SubResource( 1 )
+custom_styles/separator = SubResource( 2 )
 
 [node name="Ready" type="CheckButton" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
 margin_left = 8.0
@@ -171,7 +172,7 @@ margin_left = 157.0
 margin_right = 161.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_styles/separator = SubResource( 1 )
+custom_styles/separator = SubResource( 2 )
 
 [node name="Slime" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
 margin_left = 165.0
@@ -184,7 +185,7 @@ margin_left = 217.0
 margin_right = 221.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_styles/separator = SubResource( 1 )
+custom_styles/separator = SubResource( 2 )
 
 [node name="Prisoner" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
 margin_left = 225.0

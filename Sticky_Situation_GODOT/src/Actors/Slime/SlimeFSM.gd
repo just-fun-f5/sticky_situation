@@ -1,4 +1,4 @@
-extends "res://src/Actors/StateMachine.gd"
+extends StateMachine
 
 #Declare states
 func _ready():
@@ -26,7 +26,6 @@ func _input(event):
 	elif state == states.jump:
 		if event.is_action_released("jump") and parent.velocity.y < parent.min_jump_velocity:
 			parent.velocity.y = parent.min_jump_velocity
-	
 
 func _state_logic(delta):
 	#We determine move direction
@@ -35,12 +34,12 @@ func _state_logic(delta):
 	parent._update_wall_direction()
 	#We receive normal input if not wall sliding
 	if state != states.wall_slide:
-		parent._handle_move_input()
+		parent._handle_move_input() # Calcular la vel hor
 	parent._apply_gravity(delta)
 	#Use different inputs if 
 	if state == states.wall_slide:
-		parent._cap_gravity_wall_slide()
-		parent._handle_wall_slide_sticking()
+		parent._cap_gravity_wall_slide()  # caer más lento
+		parent._handle_wall_slide_sticking() #! revisar
 	#We apply the final movement vector
 	parent._apply_movement()
 

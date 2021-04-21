@@ -30,7 +30,6 @@ func _input(event: InputEvent) -> void:
 
 # This function is called every physics frame
 func _physics_process(_delta: float) -> void:
-	
 	if is_network_master():
 		pass
 	
