@@ -123,3 +123,4 @@ func _exit_state(old_state, new_state):
 func _on_WallSlideStickyTimer_timeout():
 	if state == states.wall_slide:
 		set_state(states.fall)
+		print("fall")

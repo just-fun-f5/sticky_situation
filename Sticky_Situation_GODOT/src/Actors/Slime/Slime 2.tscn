@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Actors/Slime/Label.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.96073, 5.70469 )
+extents = Vector2( 7, 6.19385 )
 
 [node name="Slime2" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 [node name="SlimeNode" type="Node2D" parent="."]
 
 [node name="Slime2Animation" parent="SlimeNode" instance=ExtResource( 1 )]
-position = Vector2( -1, 5.1354 )
+position = Vector2( -0.255909, 6.17713 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -24,8 +24,6 @@ shape = SubResource( 1 )
 position = Vector2( -1, 0 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
-limit_left = 0
-limit_bottom = 200
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -54,7 +52,7 @@ __meta__ = {
 [node name="RightWallRaycasts" type="Node2D" parent="WallRaycast"]
 
 [node name="RightWallRaycast" type="RayCast2D" parent="WallRaycast/RightWallRaycasts"]
-position = Vector2( 7.0169, 0 )
+position = Vector2( 7.01, 0 )
 rotation = -1.5708
 scale = Vector2( 0.5, 1 )
 enabled = true
@@ -64,7 +62,7 @@ cast_to = Vector2( 0, 1 )
 position = Vector2( -1, 0 )
 
 [node name="LefttWallRaycast" type="RayCast2D" parent="WallRaycast/LeftWallRaycasts"]
-position = Vector2( -6.01403, 0 )
+position = Vector2( -6.01, 0 )
 rotation = 1.5708
 scale = Vector2( 0.5, 1 )
 enabled = true

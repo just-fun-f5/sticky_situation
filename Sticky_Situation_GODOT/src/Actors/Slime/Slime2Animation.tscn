@@ -3,8 +3,6 @@
 [ext_resource path="res://assets/art/actors/Slime/slime_frames_all.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Slime/AnimationPlayer2.gd" type="Script" id=2]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Fall"
 loop = true
@@ -104,7 +102,7 @@ tracks/0/keys = {
 texture = ExtResource( 1 )
 vframes = 6
 hframes = 6
-frame = 25
+frame = 24
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 1 )
