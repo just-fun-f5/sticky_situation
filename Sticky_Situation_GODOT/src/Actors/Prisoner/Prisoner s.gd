@@ -26,7 +26,7 @@ puppet var puppet_pos = Vector2()
 puppet var puppet_direction = 0
 #Animation nodes
 onready var body = $SlimeNode
-onready var anim_player = $SlimeNode/Slime2Animation/AnimationPlayer2
+onready var anim_player = $SlimeNode/AnimatedSprite2
 
 #Raycast nodes
 onready var left_wall_raycasts = $WallRaycast/LeftWallRaycasts
@@ -49,6 +49,8 @@ func init(nid):
 	var info = Game.players[nid]
 	$Name.text = info["name"]
 	name = str(nid)
+
+	
 
 func _update_move_direction():
 	# Actualizar movimiento a izquerda o dercha

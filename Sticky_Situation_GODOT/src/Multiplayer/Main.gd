@@ -1,6 +1,6 @@
 extends Node2D
 
-var Prisoner = preload("res://src/Actors/Prisoner/Prisoner.tscn")
+var Prisoner = preload("res://src/Actors/Prisoner/Prisoner s.tscn")
 var Slime = preload("res://src/Actors/Slime/Slime 2.tscn")
 var existHost = false
 
@@ -27,8 +27,7 @@ func _end_game():
 	get_tree().change_scene("res://scenes/Lobby.tscn")
 
 func create_prisoner(nid):
-	#var prisoner = Prisoner.instance()
-	var prisoner = Slime.instance()
+	var prisoner = Prisoner.instance()
 	prisoner.init(nid)
 	prisoner.global_position = $Positions.get_child(1).global_position
 	$Players.add_child(prisoner)

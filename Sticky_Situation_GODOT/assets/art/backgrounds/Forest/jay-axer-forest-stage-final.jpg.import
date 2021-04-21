@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/link.png-e52e3fd8cedcb040ef336540f1727bb8.stex"
+path="res://.import/jay-axer-forest-stage-final.jpg-ac95c9785ef2cf7230e6ac6606cb4931.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/actors/Prisoner/link.png"
-dest_files=[ "res://.import/link.png-e52e3fd8cedcb040ef336540f1727bb8.stex" ]
+source_file="res://assets/art/backgrounds/Forest/jay-axer-forest-stage-final.jpg"
+dest_files=[ "res://.import/jay-axer-forest-stage-final.jpg-ac95c9785ef2cf7230e6ac6606cb4931.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

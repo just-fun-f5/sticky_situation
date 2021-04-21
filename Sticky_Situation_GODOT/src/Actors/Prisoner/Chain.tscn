@@ -12,19 +12,21 @@ height = 8.80657
 script = ExtResource( 3 )
 
 [node name="Links" type="Sprite" parent="."]
+position = Vector2( 0.0569499, -13.4173 )
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -8, 14 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 360 )
+region_rect = Rect2( 0, 4, 16, 360 )
 
 [node name="Tip" type="KinematicBody2D" parent="."]
 collision_layer = 4
 
 [node name="Hook" type="Sprite" parent="Tip"]
+position = Vector2( 0.140312, -14.3114 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
-position = Vector2( 0, 15.7008 )
+position = Vector2( 0, -0.01367 )
 shape = SubResource( 1 )
