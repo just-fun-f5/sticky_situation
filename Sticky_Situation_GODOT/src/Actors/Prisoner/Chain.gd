@@ -12,6 +12,7 @@ var tip := Vector2(0,0)			# The global position the tip should be in
 								# moves.
 
 const SPEED = 20	# The speed with which the chain moves
+const MAX_HOOK_LENGHT = 300
 
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
@@ -38,6 +39,9 @@ func _process(_delta: float) -> void:
 	$Tip.rotation = self.position.angle_to_point(tip_loc) - deg2rad(90)
 	links.position = tip_loc						# The links are moved to start at the tip
 	links.region_rect.size.y = tip_loc.length()		# and get extended for the distance between (0,0) and the tip
+	
+#	if links.region_rect.size.y > MAX_HOOK_LENGHT:
+#		release()
 
 # Every physics frame we update the tip position
 func _physics_process(_delta: float) -> void:

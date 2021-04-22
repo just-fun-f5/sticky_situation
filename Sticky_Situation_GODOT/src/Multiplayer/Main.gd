@@ -29,14 +29,14 @@ func _end_game():
 func create_prisoner(nid):
 	var prisoner = Prisoner.instance()
 	prisoner.init(nid)
-	prisoner.global_position = $Positions.get_child(1).global_position
 	$Players.add_child(prisoner)
+	prisoner.global_position = $Positions.get_child(1).global_position
 	return prisoner
 	
 func create_slime(nid):
 	var slime = Slime.instance()
 	slime.init(nid)
-	slime.global_position = $Positions.get_child(0).global_position
 	$Players.add_child(slime)
+	slime.global_position = $Positions.get_child(0).global_position
 	return slime
 	

@@ -86,4 +86,5 @@ margin_bottom = -26.0452
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="timeout" from="WallSlideStickyTimer" to="SlimeFSM" method="_on_WallSlideStickyTimer_timeout"]

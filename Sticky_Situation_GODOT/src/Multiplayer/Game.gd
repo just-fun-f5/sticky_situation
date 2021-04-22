@@ -77,3 +77,6 @@ func end_game():
 
 #func _process(delta: float) -> void:
 #	print(Game.players)
+
+func is_net_master(node):
+	return !get_tree().network_peer or node.is_network_master()

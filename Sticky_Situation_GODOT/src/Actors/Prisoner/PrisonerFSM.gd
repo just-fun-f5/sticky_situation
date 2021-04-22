@@ -12,6 +12,8 @@ func _ready():
 #Jump input
 func _input(event):
 	
+	if !Game.is_net_master(self):
+		return
 	#Jump normally if run or idle state
 	if [states.idle, states.run].has(state):
 		if event.is_action_pressed("jump"):
@@ -27,6 +29,15 @@ func _input(event):
 	elif state == states.jump:
 		if event.is_action_released("jump") and parent.velocity.y < parent.min_jump_velocity:
 			parent.velocity.y = parent.min_jump_velocity
+	
+	if event is InputEventMouseButton:
+		if event.pressed:
+			# We clicked the mouse -> shoot()
+			print(event.position)
+			$"../Chain".shoot(parent.get_global_mouse_position() - parent.global_position)
+		else:
+			# We released the mouse -> release()
+			$"../Chain".release()
 
 func _state_logic(delta):
 	#We determine move direction

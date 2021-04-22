@@ -30,8 +30,6 @@ limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
-editor_draw_limits = true
-editor_draw_drag_margin = true
 script = ExtResource( 3 )
 
 [node name="SlimeFSM" type="Node2D" parent="."]
@@ -86,4 +84,5 @@ margin_bottom = -26.0452
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="timeout" from="WallSlideStickyTimer" to="SlimeFSM" method="_on_WallSlideStickyTimer_timeout"]

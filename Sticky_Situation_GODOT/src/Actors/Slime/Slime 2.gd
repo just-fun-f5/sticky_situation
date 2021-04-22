@@ -21,7 +21,6 @@ var wall_direction = 1
 var move_direction = 0
 
 # networking
-var player_is_online = false
 puppet var puppet_pos = Vector2()
 puppet var puppet_direction = 0
 #Animation nodes
@@ -45,14 +44,14 @@ func _ready():
 # Configure for multiplayer
 func init(nid):
 	set_network_master(nid)
-	$Camera2D.current = is_network_master()
+	$Camera2D.current = Game.is_net_master(self)
 	var info = Game.players[nid]
 	$Name.text = info["name"]
 	name = str(nid)
 
 func _update_move_direction():
 	# Actualizar movimiento a izquerda o dercha
-	if !player_is_online or is_network_master():
+	if Game.is_net_master(self):
 		move_direction = -int(Input.is_action_pressed("move_left")) + int(Input.is_action_pressed("move_right"))
 		rset("puppet_direction", move_direction)
 	else:
@@ -102,7 +101,7 @@ func _apply_movement():
 	velocity = move_and_slide(velocity,UP)
 	is_grounded = is_on_floor() # !revisar
 	
-	if is_network_master():
+	if Game.is_net_master(self):
 		rset_unreliable("puppet_pos", position) #rset_unreliable
 	else:
 		position = lerp(position, puppet_pos, 0.5)

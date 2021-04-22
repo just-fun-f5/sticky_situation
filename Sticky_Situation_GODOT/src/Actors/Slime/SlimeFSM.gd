@@ -11,6 +11,8 @@ func _ready():
 
 #Jump input
 func _input(event):
+	if !Game.is_net_master(self):
+		return
 	#Jump normally if run or idle state
 	if [states.idle, states.run].has(state):
 		if event.is_action_pressed("jump"):

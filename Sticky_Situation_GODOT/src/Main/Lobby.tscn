@@ -201,4 +201,5 @@ offset = Vector2( 0, 400 )
 scale = Vector2( 2, 2 )
 transform = Transform2D( 2, 0, 0, 2, 0, 400 )
 follow_viewport_enable = true
+
 [connection signal="toggled" from="CanvasLayer/Panel/Waiting/HBoxContainer/Ready" to="." method="_on_Ready_toggled"]
