@@ -95,6 +95,44 @@ func _on_Ready_toggled(button_pressed):
 			
 			_show_connect()
 
+func _on_Slime_pressed():
+	# set player info
+	var my_id = Game.players.keys()[0]
+	var type_available = true
+	var new_type = Game.SLIME
+	
+	# check if type is available
+	for key in Game.players.keys():
+		if Game.players[key]["player_type"] == new_type:
+			type_available = false
+	
+	# if it is change
+	if type_available:
+		_update_player_type(my_id, new_type)
+		_update_player_ui(my_id, new_type)
+
+func _on_Prisoner_pressed():
+	# set player info
+	var my_id = Game.players.keys()[0]
+	var type_available = true
+	var new_type = Game.PRISONER
+	
+	# check if type is available
+	for key in Game.players.keys():
+		if Game.players[key]["player_type"] == new_type:
+			type_available = false
+	
+	# if it is change
+	if type_available:
+		_update_player_type(my_id, new_type)
+		_update_player_ui(my_id, new_type)
+func _on_Exit_pressed():
+	var me = Game.players.keys()[0]
+	_remove_player(me)
+	_remove_player_ui(me)
+	_show_connect()
+
+
 # ---------- SYNC_PLAYER_INFO  ----------  #
 # arriving info
 remote func send_info(info):
@@ -186,7 +224,8 @@ func _add_player_ui(id):
 
 func _update_player_ui(id, new_type):
 	var label = (players_container.get_child(_player_label[id]) as Label)
-	label.text = new_type
+	var new_name = Game.players[id]["name"] + " is a " + _player_types[new_type]
+	label.text = new_name
 
 func _remove_player_ui(id):
 	var sid = str(id)
@@ -223,4 +262,3 @@ func _port_opened(result):
 	if not result:
 		_show_connect()
 		$CanvasLayer/Panel/Connect/Error.text = "Port %d couldn't be opened!" % PORT
-

@@ -12,7 +12,7 @@ var tip := Vector2(0,0)			# The global position the tip should be in
 								# moves.
 
 const SPEED = 20	# The speed with which the chain moves
-const MAX_HOOK_LENGHT = 300
+const MAX_HOOK_LENGHT = 200
 
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
