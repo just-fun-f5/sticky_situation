@@ -44,13 +44,27 @@ func _process(_delta: float) -> void:
 #		release()
 
 # Every physics frame we update the tip position
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	$Tip.global_position = tip	# The player might have moved and thus updated the position of the tip -> reset it
 	if flying:
 		# `if move_and_collide()` always moves, but returns true if we did collide
-		if $Tip.move_and_collide(direction * SPEED):
-			hooked = true	# Got something!
-			flying = false	# Not flying anymore
+		var collision = $Tip.move_and_collide(direction * SPEED * delta * 50)
+		if collision:
+			var tile_pos = collision.collider.world_to_map(collision.position - collision.normal)
+#			tile_pos -= collision.normal
+			var tile = collision.collider.get_cellv(tile_pos)
+#			if tile == 0:
+			print(tile)
+#		devolver
+			if tile == 1:
+				hooked = true	# Got something!
+				flying = false	# Not flying anymore
+#				print(collision.collider_id)
+			else:
+				hooked = false
+				flying = false
+#			hooked = true	# Got something!
+#			flying = false	# Not flying anymore
 	tip = $Tip.global_position	# set `tip` as starting position for next frame
 	if hooked and parent:
 		print(links.rotation)

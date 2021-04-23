@@ -26,6 +26,7 @@ puppet var puppet_direction = 0
 #Animation nodes
 onready var body = $SlimeNode
 onready var anim_player = $SlimeNode/Slime2Animation/AnimationPlayer2
+onready var auto_tile = get_node("../../AutoTile")
 
 #Raycast nodes
 onready var left_wall_raycasts = $WallRaycast/LeftWallRaycasts
@@ -95,10 +96,12 @@ func _cap_gravity_wall_slide():
 	# Caer mś lento cuando estoy haciendo walljump
 	var max_velocity = 16 if !Input.is_action_pressed("down") else 15 * UNIT_SIZE
 	velocity.y = min(velocity.y, max_velocity)
+	velocity.x = 1*wall_direction
 
 func _apply_movement():
 	# Esta función finalmente lo mueve
 	velocity = move_and_slide(velocity,UP)
+	_paint()
 	is_grounded = is_on_floor() # !revisar
 	
 	if Game.is_net_master(self):
@@ -106,6 +109,19 @@ func _apply_movement():
 	else:
 		position = lerp(position, puppet_pos, 0.5)
 		puppet_pos = position
+		
+func _paint():
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.has_method("collide_with_paint"):
+			collision.collider.collide_with_paint(collision,self)
+#			var tile_pos = collision.collider.world_to_map(position)
+#			tile_pos -= collision.normal
+#			var tile = collision.collider.get_cellv(tile_pos)
+#			if tile == 0:
+#				collision.collider.set_cellv(tile_pos, 1)
+#				auto_tile.set_cellv(tile_pos, 1)
+#				collision.collider.update_bitmask_area(tile_pos)
 
 func _check_is_valid_wall(wall_raycasts):
 	#Check if raycasts are colliding

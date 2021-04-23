@@ -17,8 +17,8 @@ var thread = Thread.new()
 signal port_opened(result)
 
 func open_port(port):
-#	thread.start(self, "_thread_open_port", port)
-	emit_signal("port_opened", true)
+	thread.start(self, "_thread_open_port", port)
+#	emit_signal("port_opened", true)
 
 func _thread_open_port(port):
 	var res = upnp.discover()
