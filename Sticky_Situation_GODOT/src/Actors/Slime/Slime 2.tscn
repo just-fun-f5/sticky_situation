@@ -34,6 +34,7 @@ script = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="SlimeFSM"]
+visible = false
 margin_left = -35.479
 margin_top = -40.0
 margin_right = 35.521
