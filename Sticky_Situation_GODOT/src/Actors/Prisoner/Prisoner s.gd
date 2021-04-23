@@ -10,7 +10,7 @@ var move_speed = 9 * UNIT_SIZE
 var gravity
 var max_jump_velocity 
 var min_jump_velocity 
-var max_jump_height = 6.25 * UNIT_SIZE
+var max_jump_height = 4.25 * UNIT_SIZE
 var min_jump_height = 1 * UNIT_SIZE
 var jump_duration = 0.5
 

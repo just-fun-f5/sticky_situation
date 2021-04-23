@@ -26,7 +26,6 @@ puppet var puppet_direction = 0
 #Animation nodes
 onready var body = $SlimeNode
 onready var anim_player = $SlimeNode/Slime2Animation/AnimationPlayer2
-onready var auto_tile = get_node("../../AutoTile")
 
 #Raycast nodes
 onready var left_wall_raycasts = $WallRaycast/LeftWallRaycasts
@@ -131,7 +130,7 @@ func _check_is_valid_wall(wall_raycasts):
 				#var dot = acos(Vector2.UP.dot(raycast.get_collision_normal()))
 				#if dot > PI * 0.35 and dot < PI * 0.55:
 				return true
-	return false
+	return false 
 
 func _handle_wall_slide_sticking():
 	# Es para salir del wall slide sin tener que saltar necesariamente
