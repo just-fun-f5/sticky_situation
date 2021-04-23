@@ -2,7 +2,7 @@
 This script controls the chain.
 """
 extends Node2D
-
+onready var parent = get_parent()
 onready var links = $Links		# A slightly easier reference to the links
 var direction := Vector2(0,0)	# The direction in which the chain was shot
 var tip := Vector2(0,0)			# The global position the tip should be in
@@ -12,7 +12,7 @@ var tip := Vector2(0,0)			# The global position the tip should be in
 								# moves.
 
 const SPEED = 20	# The speed with which the chain moves
-const MAX_HOOK_LENGHT = 200
+const MAX_HOOK_LENGHT = 400
 
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
@@ -52,3 +52,6 @@ func _physics_process(_delta: float) -> void:
 			hooked = true	# Got something!
 			flying = false	# Not flying anymore
 	tip = $Tip.global_position	# set `tip` as starting position for next frame
+	if hooked and parent:
+		print(links.rotation)
+		parent.velocity = ($Tip.global_position-parent.global_position) * SPEED * 0.2
