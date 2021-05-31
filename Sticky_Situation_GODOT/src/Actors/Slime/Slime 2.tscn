@@ -13,7 +13,9 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.96073, 5.70469 )
 
-[node name="Slime2" type="KinematicBody2D"]
+[node name="Slime2" type="KinematicBody2D" groups=[
+"Slime",
+]]
 script = ExtResource( 2 )
 current_element = ExtResource( 6 )
 avaible_skills = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ) ]

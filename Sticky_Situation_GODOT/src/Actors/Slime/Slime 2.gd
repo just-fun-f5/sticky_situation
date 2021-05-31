@@ -175,4 +175,7 @@ func _use_skill():
 	print("Hey")
 	pass
 
-
+# ---------------- SKILLS ----------------
+func _absorb(element):
+	current_element = element
+	$SlimeNode/Slime2Animation/slime2.modulate = current_element.color
