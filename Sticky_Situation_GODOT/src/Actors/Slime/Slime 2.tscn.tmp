@@ -1,0 +1,159 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://src/Actors/Slime/Slime2Animation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Slime/Slime 2.gd" type="Script" id=2]
+[ext_resource path="res://src/Actors/Slime/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://src/Actors/Slime/SlimeFSM.gd" type="Script" id=4]
+[ext_resource path="res://src/Actors/Slime/Label.gd" type="Script" id=5]
+[ext_resource path="res://src/Actors/Resources/Slime.tres" type="Resource" id=6]
+[ext_resource path="res://src/Actors/Resources/_explode.tres" type="Resource" id=7]
+[ext_resource path="res://src/Actors/Resources/_throw.tres" type="Resource" id=8]
+[ext_resource path="res://src/Actors/Resources/_eat.tres" type="Resource" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.96073, 5.70469 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0705882, 0.592157, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0784314, 0.52549, 0.921569, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="Slime2" type="KinematicBody2D" groups=[
+"Slime",
+]]
+script = ExtResource( 2 )
+current_element = ExtResource( 6 )
+avaible_skills = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ) ]
+
+[node name="SlimeNode" type="Node2D" parent="."]
+
+[node name="Slime2Animation" parent="SlimeNode" instance=ExtResource( 1 )]
+position = Vector2( -1, 5.1354 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -1, 0 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+script = ExtResource( 3 )
+
+[node name="SlimeFSM" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="SlimeFSM"]
+visible = false
+margin_left = -35.479
+margin_top = -40.0
+margin_right = 35.521
+margin_bottom = -26.0
+text = "test"
+align = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallRaycast" type="Node2D" parent="."]
+
+[node name="RightWallRaycasts" type="Node2D" parent="WallRaycast"]
+
+[node name="RightWallRaycast" type="RayCast2D" parent="WallRaycast/RightWallRaycasts"]
+position = Vector2( 7.0169, 0 )
+rotation = -1.5708
+scale = Vector2( 0.5, 1 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+
+[node name="LeftWallRaycasts" type="Node2D" parent="WallRaycast"]
+position = Vector2( -1, 0 )
+
+[node name="LefttWallRaycast" type="RayCast2D" parent="WallRaycast/LeftWallRaycasts"]
+position = Vector2( -6.01403, 0 )
+rotation = 1.5708
+scale = Vector2( 0.5, 1 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+
+[node name="WallSlideCooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="WallSlideStickyTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Name" type="Label" parent="."]
+margin_left = -20.023
+margin_top = -24.0
+margin_right = 19.977
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="VBoxContainer" parent="CanvasLayer"]
+margin_left = 2.40541
+margin_top = 3.0
+margin_right = 129.405
+margin_bottom = 47.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="HBoxContainer" parent="CanvasLayer/UI"]
+margin_right = 126.0
+margin_bottom = 14.0
+
+[node name="HPText" type="Label" parent="CanvasLayer/UI/HP"]
+margin_right = 18.0
+margin_bottom = 14.0
+text = "HP"
+
+[node name="HPBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
+margin_left = 22.0
+margin_right = 122.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 1
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 50.0
+percent_visible = false
+
+[node name="MP" type="HBoxContainer" parent="CanvasLayer/UI"]
+margin_top = 18.0
+margin_right = 126.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 122, 14 )
+
+[node name="MPText" type="Label" parent="CanvasLayer/UI/MP"]
+margin_right = 20.0
+margin_bottom = 14.0
+text = "MP"
+
+[node name="MPBar" type="ProgressBar" parent="CanvasLayer/UI/MP"]
+margin_left = 24.0
+margin_right = 124.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 14 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+value = 50.0
+percent_visible = false
+
+[connection signal="timeout" from="WallSlideStickyTimer" to="SlimeFSM" method="_on_WallSlideStickyTimer_timeout"]

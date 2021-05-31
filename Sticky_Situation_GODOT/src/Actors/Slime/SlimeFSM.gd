@@ -34,6 +34,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			get_parent()._use_skill()
+
 func _state_logic(delta):
 	#We determine move direction
 	parent._update_move_direction()

@@ -48,6 +48,8 @@ func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
+	_set_HP(100)
+	_set_MP(100)
 
 # Configure for multiplayer
 func init(nid):
@@ -81,7 +83,6 @@ func _update_wall_direction():
 func _handle_move_input():
 	# Moverse horizontalmente Obtiene la velocidad en x
 	velocity.x = lerp(velocity.x, move_speed * move_direction, 0.2)
-
 	# flippear el sprite para que mire dónde se esta moviendo
 	if move_direction != 0:
 		body.scale.x = move_direction
@@ -150,11 +151,13 @@ func _throw():
 	#	throw a "" of the current element,
 	#	that affect the first object impacted.
 	#var missil = 
+	if MP == 0: return
 	var slime_ball_instance = slime_ball.instance()
 	get_parent().add_child(slime_ball_instance)
 	slime_ball_instance.position = global_position
 	slime_ball_instance.launch(facing)
 	var damage = avaible_skills[current_skill].damage * current_element.damage_factor
+	hit_MP(-10)
 	damage += 1
 	# missil.launch
 
@@ -186,3 +189,5 @@ func _use_skill():
 func _absorb(element):
 	current_element = element
 	$SlimeNode/Slime2Animation/slime2.modulate = current_element.color
+
+# ---------------- MANA/HP ---------------

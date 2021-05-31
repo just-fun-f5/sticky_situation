@@ -53,5 +53,3 @@ func _physics_process(delta: float) -> void:
 #			blood_instance.global_position = slime_node.position
 			blood_instance.global_position = get_global_mouse_position()
 			add_child(blood_instance)
-
-	
