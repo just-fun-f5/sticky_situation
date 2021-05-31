@@ -10,7 +10,6 @@ var gravity = 200
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	var collision = move_and_collide(velocity * delta)
-	print(velocity)
 	if collision != null:
 		if collision.collider.has_method("collide_with_paint"):
 			collision.collider.collide_with_paint(collision,self)

@@ -1,15 +1,14 @@
-
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Level/Tiles_and_Platforms/AutoTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Multiplayer/Main.gd" type="Script" id=2]
 [ext_resource path="res://src/Level/Parallax_Background/ParallaxBackground.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Actors/Slime/blood.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Main/test_element.gd" type="Script" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://src/Actors/Slime/blood.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Actors/Resources/Fire.tres" type="Resource" id=6]
 [ext_resource path="res://src/Actors/Resources/Slime.tres" type="Resource" id=7]
 [ext_resource path="res://src/Actors/Resources/Ice.tres" type="Resource" id=8]
+[ext_resource path="res://icon.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.0
@@ -50,7 +49,7 @@ __meta__ = {
 element = ExtResource( 6 )
 
 [node name="icon" type="Sprite" parent="StaticBody2D"]
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
@@ -66,7 +65,7 @@ __meta__ = {
 element = ExtResource( 7 )
 
 [node name="icon" type="Sprite" parent="StaticBody2D2"]
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 shape = SubResource( 1 )
@@ -82,7 +81,7 @@ __meta__ = {
 element = ExtResource( 8 )
 
 [node name="icon" type="Sprite" parent="StaticBody2D3"]
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource( 1 )
