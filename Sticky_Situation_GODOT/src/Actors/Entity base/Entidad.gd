@@ -9,22 +9,15 @@ var maxMP = 100 setget _set_maxMP
 var HP: float = 100 setget _set_HP
 var MP: float = 100 setget _set_MP
 
-# DEBUG
-#"""
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("jump"):
-		self.rel_HP(-10)
-	if Input.is_action_just_pressed("down"):
-		self.rel_MP(-10)
-#"""
-
 # Sets MAXS
+# Setea el maximo de cada cantidad
 func _set_maxMP(maxValue):
 	maxMP = maxValue
 func _set_maxHP(maxValue):
 	maxHP = maxValue
 
 # Sets Value
+# Setea la cantidad actual del valor entre 0 y su maximo
 func _set_HP(value):
 	HP = clamp(value, 0, maxHP)
 	$CanvasLayer/UI/HP/HPBar.value = HP
@@ -35,6 +28,7 @@ func _set_MP(value):
 	return true if MP <= 0 else false
 
 # Modificadores absolutos
+# Modifica una cantidad fija a la cantidad actual
 func hit_HP(quantity):
 	var state
 	state = self._set_HP(HP + quantity)
@@ -45,6 +39,7 @@ func hit_MP(quantity):
 	return state
 
 # Modificadores porcentuales absolutos
+# Modifica una cantidad porcentual de su maximo a la actual 
 func rela_HP(quantity):
 	if quantity != 0:
 		var state
@@ -67,6 +62,7 @@ func rela_MP(quantity):
 		return null
 
 # Modificadores porcentuales actuales
+# Modifica una cantidad porcentual de su actual a la actual 
 func rel_HP(quantity):
 	if quantity != 0:
 		var state

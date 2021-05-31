@@ -38,17 +38,17 @@ __meta__ = {
 }
 
 [node name="HP" type="HBoxContainer" parent="CanvasLayer/UI"]
-margin_right = 127.0
+margin_right = 126.0
 margin_bottom = 14.0
 
 [node name="HPText" type="Label" parent="CanvasLayer/UI/HP"]
-margin_right = 20.0
+margin_right = 18.0
 margin_bottom = 14.0
 text = "HP"
 
 [node name="HPBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
-margin_left = 24.0
-margin_right = 124.0
+margin_left = 22.0
+margin_right = 122.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 1
@@ -59,7 +59,7 @@ percent_visible = false
 
 [node name="MP" type="HBoxContainer" parent="CanvasLayer/UI"]
 margin_top = 18.0
-margin_right = 127.0
+margin_right = 126.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 122, 14 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Actors/Prisoner/PrisonerFSM.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Prisoner/Prisoner s.gd" type="Script" id=2]
@@ -9,6 +9,18 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.96073, 10.5403 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0705882, 0.592157, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0784314, 0.52549, 0.921569, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Prisoner" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -22,7 +34,7 @@ scale = Vector2( 0.2, 0.2 )
 [node name="AnimatedSprite2" parent="SlimeNode" instance=ExtResource( 4 )]
 position = Vector2( 0.256, -9 )
 scale = Vector2( 1.03934, 0.809918 )
-frame = 3
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -92,4 +104,57 @@ margin_bottom = -12.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="VBoxContainer" parent="CanvasLayer"]
+margin_left = 2.40541
+margin_top = 3.0
+margin_right = 129.405
+margin_bottom = 47.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="HBoxContainer" parent="CanvasLayer/UI"]
+margin_right = 126.0
+margin_bottom = 14.0
+
+[node name="HPText" type="Label" parent="CanvasLayer/UI/HP"]
+margin_right = 18.0
+margin_bottom = 14.0
+text = "HP"
+
+[node name="HPBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
+margin_left = 22.0
+margin_right = 122.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 1
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 50.0
+percent_visible = false
+
+[node name="MP" type="HBoxContainer" parent="CanvasLayer/UI"]
+margin_top = 18.0
+margin_right = 126.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 122, 14 )
+
+[node name="MPText" type="Label" parent="CanvasLayer/UI/MP"]
+margin_right = 20.0
+margin_bottom = 14.0
+text = "MP"
+
+[node name="MPBar" type="ProgressBar" parent="CanvasLayer/UI/MP"]
+margin_left = 24.0
+margin_right = 124.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 14 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+value = 50.0
+percent_visible = false
+
 [connection signal="timeout" from="WallSlideStickyTimer" to="PrisonerFSM" method="_on_WallSlideStickyTimer_timeout"]
