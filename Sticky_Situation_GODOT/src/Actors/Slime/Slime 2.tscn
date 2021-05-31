@@ -10,7 +10,7 @@
 [ext_resource path="res://src/Actors/Resources/_throw.tres" type="Resource" id=8]
 [ext_resource path="res://src/Actors/Resources/_eat.tres" type="Resource" id=9]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.96073, 5.70469 )
 
 [node name="Slime2" type="KinematicBody2D"]
@@ -24,7 +24,7 @@ avaible_skills = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ) ]
 position = Vector2( -1, 5.1354 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -1, 0 )

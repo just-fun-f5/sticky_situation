@@ -14,11 +14,14 @@ func _input(event):
 	
 	if !Game.is_net_master(self):
 		return
+		
+	if event.is_action_pressed("ui_accept"):
+		parent._shoot()
 	#Jump normally if run or idle state
 	if [states.idle, states.run].has(state):
 		if event.is_action_pressed("jump"):
 			parent.velocity.y = parent.max_jump_velocity
-		
+	
 	#Variable jump height if input is released
 	elif state == states.jump:
 		if event.is_action_released("jump") and parent.velocity.y < parent.min_jump_velocity:

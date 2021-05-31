@@ -7,6 +7,7 @@
 radius = 3.84677
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+z_index = 4096
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

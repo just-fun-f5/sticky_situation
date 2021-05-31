@@ -20,6 +20,8 @@ var facing
 var wall_direction = 1
 var move_direction = 0
 
+var Arrow = preload("res://src/Actors/Prisoner/Arrow.tscn")
+
 # networking
 puppet var puppet_pos = Vector2()
 puppet var puppet_direction = 0
@@ -49,7 +51,7 @@ func init(nid):
 	$Name.text = info["name"]
 	name = str(nid)
 
-	
+
 
 func _update_move_direction():
 	# Actualizar movimiento a izquerda o dercha
@@ -129,3 +131,10 @@ func _handle_wall_slide_sticking():
 		else:
 			#print("Timer Stopped")
 			wall_slide_sticky_timer.stop()
+			
+func _shoot():
+	var arrow = Arrow.instance()
+	get_parent().add_child(arrow)
+	arrow.global_position = global_position
+	arrow.rotation = (get_global_mouse_position() - global_position).angle()
+	arrow.launch()

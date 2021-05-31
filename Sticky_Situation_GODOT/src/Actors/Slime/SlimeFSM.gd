@@ -13,7 +13,7 @@ func _ready():
 func _input(event):
 	if !Game.is_net_master(self):
 		return
-	if event.is_action_pressed("ui_accept"):#
+	if event.is_action_pressed("mb_right"):#
 		parent._throw()
 	#Jump normally if run or idle state
 	if [states.idle, states.run].has(state):

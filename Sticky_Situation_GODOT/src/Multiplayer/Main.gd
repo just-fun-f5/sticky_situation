@@ -39,4 +39,19 @@ func create_slime(nid):
 	$Players.add_child(slime)
 	slime.global_position = $Positions.get_child(0).global_position
 	return slime
+
+#Particulas 
+
+
+
+export(PackedScene) var blood : PackedScene
+
+func _physics_process(delta: float) -> void:
+	if(Input.is_action_just_pressed("mb_left")):
+		for i in range(45):
+			var blood_instance : Area2D = blood.instance()
+#			blood_instance.global_position = slime_node.position
+			blood_instance.global_position = get_global_mouse_position()
+			add_child(blood_instance)
+
 	

@@ -18,7 +18,7 @@ var jump_duration = 0.5
 
 #Direction variables
 var is_grounded
-var facing
+var facing = 1
 var wall_direction = 1
 var move_direction = 0
 
