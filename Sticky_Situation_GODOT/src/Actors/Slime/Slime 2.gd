@@ -37,6 +37,12 @@ onready var right_wall_raycasts = $WallRaycast/RightWallRaycasts
 onready var wall_slide_cooldown = $WallSlideCooldown
 onready var wall_slide_sticky_timer = $WallSlideStickyTimer
 
+#Skill Variables
+export (Resource) var current_element
+export (Array, Resource) var avaible_skills
+var current_skill = 0
+const base_damage = 100
+
 #Calculate kinematic equations
 func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
@@ -116,13 +122,6 @@ func _paint():
 		var collision = get_slide_collision(i)
 		if collision.collider.has_method("collide_with_paint"):
 			collision.collider.collide_with_paint(collision,self)
-#			var tile_pos = collision.collider.world_to_map(position)
-#			tile_pos -= collision.normal
-#			var tile = collision.collider.get_cellv(tile_pos)
-#			if tile == 0:
-#				collision.collider.set_cellv(tile_pos, 1)
-#				auto_tile.set_cellv(tile_pos, 1)
-#				collision.collider.update_bitmask_area(tile_pos)
 
 func _check_is_valid_wall(wall_raycasts):
 	#Check if raycasts are colliding
@@ -145,8 +144,42 @@ func _handle_wall_slide_sticking():
 			#print("Timer Stopped")
 			wall_slide_sticky_timer.stop()
 
+
+# ---------------- SKILLS ----------------
 func _throw():
+	#	throw a "" of the current element,
+	#	that affect the first object impacted.
+	#var missil = 
 	var slime_ball_instance = slime_ball.instance()
 	get_parent().add_child(slime_ball_instance)
 	slime_ball_instance.position = global_position
 	slime_ball_instance.launch(facing)
+	var damage = avaible_skills[current_skill].damage * current_element.damage_factor
+	damage += 1
+	# missil.launch
+
+func _explode():
+	#	make a radial explosion, that affects "x" area
+	#	and drain all the remaining mana
+	#$Current_Element.explode()
+	pass
+
+func _eat():
+	#	eat the nearest enemy, which get a passive damage
+	#	the partner can affect the enemy when is inside the
+	# 	slime
+	pass
+
+func _change_skill(direction):
+	#	change the current skill in the direction
+	pass
+
+func _use_skill():
+	#	Uses the current skill
+	var temp = 0
+	call(avaible_skills[current_skill].skill_name)
+	$SlimeNode/Slime2Animation/AnimationPlayer2.play(avaible_skills[current_skill].animation_name)
+	print("Hey")
+	pass
+
+

@@ -1,16 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Actors/Slime/Slime2Animation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Slime/Slime 2.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/Slime/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://src/Actors/Slime/SlimeFSM.gd" type="Script" id=4]
 [ext_resource path="res://src/Actors/Slime/Label.gd" type="Script" id=5]
+[ext_resource path="res://src/Actors/Resources/Slime.tres" type="Resource" id=6]
+[ext_resource path="res://src/Actors/Resources/_explode.tres" type="Resource" id=7]
+[ext_resource path="res://src/Actors/Resources/_throw.tres" type="Resource" id=8]
+[ext_resource path="res://src/Actors/Resources/_eat.tres" type="Resource" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.96073, 5.70469 )
 
 [node name="Slime2" type="KinematicBody2D"]
 script = ExtResource( 2 )
+current_element = ExtResource( 6 )
+avaible_skills = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ) ]
 
 [node name="SlimeNode" type="Node2D" parent="."]
 
@@ -18,7 +24,7 @@ script = ExtResource( 2 )
 position = Vector2( -1, 5.1354 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -1, 0 )
