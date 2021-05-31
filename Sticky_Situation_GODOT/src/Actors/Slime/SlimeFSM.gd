@@ -28,7 +28,10 @@ func _input(event):
 	elif state == states.jump:
 		if event.is_action_released("jump") and parent.velocity.y < parent.min_jump_velocity:
 			parent.velocity.y = parent.min_jump_velocity
-
+	
+	if event is InputEventMouseButton:
+		if event.pressed:
+			get_parent()._use_skill()
 func _state_logic(delta):
 	#We determine move direction
 	parent._update_move_direction()
@@ -111,7 +114,6 @@ func _enter_state(new_state, old_state):
 			parent.body.scale.y = -parent.wall_direction
 			#Rotate sprite 
 			parent.body.set_rotation(1.5708)
-			
 
 func _exit_state(old_state, new_state):
 	match old_state:
