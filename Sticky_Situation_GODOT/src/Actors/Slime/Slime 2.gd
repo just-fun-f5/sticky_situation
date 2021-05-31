@@ -4,6 +4,8 @@ const UP = Vector2.UP
 const WALL_JUMP_VELOCITY = Vector2(400, -250)
 const UNIT_SIZE = 16
 
+var slime_ball = preload("res://src/Actors/Slime/SlimeBall.tscn")
+
 #Movement and jump variables
 var velocity = Vector2()
 var move_speed = 9 * UNIT_SIZE
@@ -142,3 +144,9 @@ func _handle_wall_slide_sticking():
 		else:
 			#print("Timer Stopped")
 			wall_slide_sticky_timer.stop()
+
+func _throw():
+	var slime_ball_instance = slime_ball.instance()
+	get_parent().add_child(slime_ball_instance)
+	slime_ball_instance.position = global_position
+	slime_ball_instance.launch(facing)
