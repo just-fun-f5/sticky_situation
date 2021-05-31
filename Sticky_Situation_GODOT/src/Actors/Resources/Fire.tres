@@ -7,3 +7,4 @@ script = ExtResource( 1 )
 damage_factor = 1.5
 name = "Fire"
 Description = "Elemento de Fuego del Slime"
+color = Color( 1, 0, 0, 1 )

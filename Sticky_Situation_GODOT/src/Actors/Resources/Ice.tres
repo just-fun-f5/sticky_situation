@@ -7,3 +7,4 @@ script = ExtResource( 1 )
 damage_factor = 0.8
 name = "Ice"
 Description = ""
+color = Color( 0.0235294, 0.623529, 0.831373, 1 )

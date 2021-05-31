@@ -7,3 +7,4 @@ script = ExtResource( 1 )
 damage_factor = 1.0
 name = "Slime"
 Description = "Base Slime Element"
+color = Color( 1, 1, 1, 1 )
