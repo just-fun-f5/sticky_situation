@@ -29,16 +29,16 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="VBoxContainer" parent="CanvasLayer"]
-margin_left = 2.40541
+margin_left = 2.0
 margin_top = 3.0
-margin_right = 129.405
-margin_bottom = 47.0
+margin_right = 133.0
+margin_bottom = 39.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HP" type="HBoxContainer" parent="CanvasLayer/UI"]
-margin_right = 126.0
+margin_right = 131.0
 margin_bottom = 14.0
 
 [node name="HPText" type="Label" parent="CanvasLayer/UI/HP"]
@@ -59,7 +59,7 @@ percent_visible = false
 
 [node name="MP" type="HBoxContainer" parent="CanvasLayer/UI"]
 margin_top = 18.0
-margin_right = 126.0
+margin_right = 131.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 122, 14 )
 

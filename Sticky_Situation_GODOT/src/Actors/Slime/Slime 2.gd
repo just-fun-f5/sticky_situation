@@ -50,6 +50,8 @@ func _ready():
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
 	_set_HP(100)
 	_set_MP(100)
+	if !Game.is_net_master(self):
+		$CanvasLayer/UI.hide()
 
 # Configure for multiplayer
 func init(nid):
