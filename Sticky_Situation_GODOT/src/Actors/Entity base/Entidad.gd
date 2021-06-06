@@ -13,8 +13,10 @@ var MP: float = 100 setget _set_MP
 # Setea el maximo de cada cantidad
 func _set_maxMP(maxValue):
 	maxMP = maxValue
+	$CanvasLayer/UI/HP/MPBar.max_value = maxMP
 func _set_maxHP(maxValue):
 	maxHP = maxValue
+	$CanvasLayer/UI/MP/HPBar.max_value = maxHP
 
 # Sets Value
 # Setea la cantidad actual del valor entre 0 y su maximo
@@ -61,8 +63,8 @@ func rela_MP(quantity):
 		print("ERR: quantity = 0")
 		return null
 
-# Modificadores porcentuales actuales
-# Modifica una cantidad porcentual de su actual a la actual 
+# Modificadores porcentuales relativos
+# Modifica una cantidad porcentual de su relativo a la actual 
 func rel_HP(quantity):
 	if quantity != 0:
 		var state
