@@ -1,0 +1,15 @@
+# Colores
+Base #5aa653
+Sombras #3b804d
+Luces #86cf74
+Ojos #3f275e
+
+# Formato
+6 imagenes de 32x32
+siendo cada tira de 192x32
+
+# Recomendacion
+Editar en cuadros unicos de 32x16
+
+# TO DO
+Merge todos los cuadros en un solo spreed sheet
