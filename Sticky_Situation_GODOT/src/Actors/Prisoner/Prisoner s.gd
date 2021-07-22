@@ -1,4 +1,5 @@
-extends Entity
+#extends Entity
+extends KinematicBody2D
 
 const UP = Vector2.UP
 const WALL_JUMP_VELOCITY = Vector2(400, -250)
@@ -25,6 +26,10 @@ var Arrow = preload("res://src/Actors/Prisoner/Arrow.tscn")
 # networking
 puppet var puppet_pos = Vector2()
 puppet var puppet_direction = 0
+
+# Health and Mana Control
+onready var hmc = $"HMC"
+
 #Animation nodes
 onready var body = $SlimeNode
 onready var anim_player = $SlimeNode/AnimatedSprite2
@@ -39,11 +44,14 @@ onready var wall_slide_sticky_timer = $WallSlideStickyTimer
 
 #Calculate kinematic equations
 func _ready():
+	# Funcional
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
-	if !Game.is_net_master(self):
-		$CanvasLayer/UI.hide()
+	
+	# Vida
+	hmc._set_HP(100)
+	hmc._set_MP(100)
 
 # Configure for multiplayer
 func init(nid):
@@ -52,8 +60,6 @@ func init(nid):
 	var info = Game.players[nid]
 	$Name.text = info["name"]
 	name = str(nid)
-
-
 
 func _update_move_direction():
 	# Actualizar movimiento a izquerda o dercha

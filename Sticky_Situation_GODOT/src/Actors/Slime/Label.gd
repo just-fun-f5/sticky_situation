@@ -19,5 +19,5 @@ func _physics_process(_delta):
 		set_text("Jump")
 	elif parent.state == parent.states.fall:
 		set_text("Fall")
-	elif parent.state == parent.states.wall_slide:
-		set_text("Wall Slide")
+#	elif parent.state == parent.states.wall_slide:
+#		set_text("Wall Slide")

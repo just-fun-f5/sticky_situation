@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Actors/Entity base/Entidad.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0705882, 0.592157, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.00392157, 0.184314, 0, 0.666667 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0784314, 0.52549, 0.921569, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0.227451, 0.337255, 0.666667 )
+
+[node name="Control" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -6.0
+margin_right = 25.0
+margin_bottom = 6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPBar" type="ProgressBar" parent="UI"]
+margin_right = 50.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+value = 50.0
+percent_visible = false
+
+[node name="MPBar" type="ProgressBar" parent="UI"]
+margin_top = 8.0
+margin_right = 50.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 4 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 50.0
+percent_visible = false

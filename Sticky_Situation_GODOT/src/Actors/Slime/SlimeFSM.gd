@@ -1,5 +1,8 @@
 extends StateMachine
 
+# Var error
+var epsilon = 100
+
 #Declare states
 func _ready():
 	add_state("idle")
@@ -64,7 +67,7 @@ func _get_transition(delta):
 				elif parent.velocity.y > 0:
 					return states.fall
 			#If not falling or jumping and x velocity not 0 transition to run state
-			elif parent.velocity.x != 0:
+			elif abs(parent.velocity.x) >= epsilon:
 				return states.run
 		#Run state
 		states.run:
@@ -73,7 +76,7 @@ func _get_transition(delta):
 					return states.jump
 				elif parent.velocity.y > 0:
 					return states.fall
-			elif parent.velocity.x == 0:
+			elif abs(parent.velocity.x) <= epsilon:
 				return states.idle
 		#Jump state
 		states.jump:

@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actors/Resources/Element.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "Entity",
-"language": "GDScript",
-"path": "res://src/Actors/Entity base/Entidad.gd"
-}, {
 "base": "Resource",
 "class": "Skill",
 "language": "GDScript",
@@ -41,7 +36,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Element": "",
-"Entity": "",
 "Skill": "",
 "StateMachine": "",
 "paint": "",
