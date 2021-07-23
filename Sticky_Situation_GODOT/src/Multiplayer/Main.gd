@@ -1,7 +1,7 @@
 extends Node2D
 
 var Prisoner = preload("res://src/Actors/Prisoner/Prisoner s.tscn")
-var Slime = preload("res://src/Actors/Slime/Slime 2.tscn")
+var Slime = preload("res://src/Actors/Slime/Slime.tscn")
 var existHost = false
 
 func _ready() -> void:
