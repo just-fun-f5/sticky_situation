@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Actors/Slime/Label.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Slime/SlimeFSM.gd" type="Script" id=2]
@@ -9,25 +9,55 @@
 [ext_resource path="res://src/Actors/Resources/_explode.tres" type="Resource" id=7]
 [ext_resource path="res://src/Actors/Slime/Slime.gd" type="Script" id=8]
 [ext_resource path="res://src/Actors/Slime/Slime2Animation.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Actors/Entity base/skill_wheel_selector.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.96073, 5.70469 )
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0, 0, 1 )
+[sub_resource type="ShaderMaterial" id=5]
+
+[sub_resource type="Theme" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.0705882, 0.686275, 0.282353, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.490196, 0.901961, 0.517647, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.0784314, 0.52549, 0.921569, 1 )
+bg_color = Color( 0.0666667, 0.494118, 0.87451, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.588235, 0.807843, 0.945098, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0 )
 
 [node name="Slime2" type="KinematicBody2D" groups=[
 "Slime",
 ]]
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -37.0083 ]
+}
 current_element = ExtResource( 5 )
-avaible_skills = [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ) ]
+avaible_skills = [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ) ]
 
 [node name="SlimeNode" type="Node2D" parent="."]
 
@@ -122,12 +152,15 @@ margin_bottom = 14.0
 text = "HP"
 
 [node name="HPBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
+material = SubResource( 5 )
 margin_left = 22.0
 margin_right = 122.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 1
-custom_styles/bg = SubResource( 2 )
+theme = SubResource( 6 )
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
 value = 50.0
 percent_visible = false
 
@@ -151,5 +184,12 @@ custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 value = 50.0
 percent_visible = false
+
+[node name="SkillWheel" type="Node2D" parent="."]
+
+[node name="skill_wheel_selector" parent="SkillWheel" instance=ExtResource( 10 )]
+offset = Vector2( 50, 50 )
+transform = Transform2D( 1, 0, 0, 1, 50, 50 )
+follow_viewport_enable = true
 
 [connection signal="timeout" from="WallSlideStickyTimer" to="SlimeFSM" method="_on_WallSlideStickyTimer_timeout"]

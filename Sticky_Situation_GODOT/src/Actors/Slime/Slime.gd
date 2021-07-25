@@ -152,7 +152,7 @@ func _handle_wall_slide_sticking():
 func _throw():
 	#	throw a "" of the current element,
 	#	that affect the first object impacted.
-	#var missil = 
+	# var missil = 
 	if MP == 0: return
 	var slime_ball_instance = slime_ball.instance()
 	get_parent().add_child(slime_ball_instance)
@@ -176,8 +176,10 @@ func _eat():
 	pass
 
 func _change_skill(direction):
-	#	change the current skill in the direction
-	pass
+	var pos = 1 if (direction > 0) else 2
+	current_skill = int(abs(current_skill + pos)) % 3
+	$SkillWheel/skill_wheel_selector/SkillWheel.move_wheel(direction)
+	print(avaible_skills[current_skill].skill_name)
 
 func _use_skill():
 	#	Uses the current skill
