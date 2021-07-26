@@ -159,7 +159,7 @@ func _throw():
 	#	throw a "" of the current element,
 	#	that affect the first object impacted.
 	# var missil = 
-	if hmc == 0: return
+	if hmc.MP == 0: return
 	var slime_ball_instance = slime_ball.instance()
 	get_parent().add_child(slime_ball_instance)
 	slime_ball_instance.position = global_position
