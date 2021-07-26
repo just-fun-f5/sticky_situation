@@ -191,7 +191,7 @@ func _use_skill():
 	#	Uses the current skill
 	var temp = 0
 	call(avaible_skills[current_skill].skill_name)
-	$SlimeNode/Slime2Animation/AnimationPlayer2.play(avaible_skills[current_skill].animation_name)
+	anim_player.play(avaible_skills[current_skill].animation_name)
 	print("Hey")
 	pass
 
