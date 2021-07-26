@@ -1,10 +1,10 @@
-extends Control
+extends CanvasLayer
 
 # Constantes
 var maxHP = 100 setget _set_maxHP
 var maxMP = 100 setget _set_maxMP
-onready var MP_Bar = $UI/MPBar
-onready var HP_Bar = $UI/HPBar
+onready var MP_Bar = $UI/MP/MPBar
+onready var HP_Bar = $UI/HP/HPBar
 
 # Vars
 var HP: float = 100 setget _set_HP

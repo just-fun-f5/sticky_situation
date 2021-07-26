@@ -1,4 +1,5 @@
-extends Entity
+# extends Entity
+extends KinematicBody2D
 
 const UP = Vector2.UP
 const WALL_JUMP_VELOCITY = Vector2(400, -250)
@@ -22,9 +23,13 @@ var facing = 1
 var wall_direction = 1
 var move_direction = 0
 
+# Health and Mana Control
+onready var hmc = $"HMC"
+
 # networking
 puppet var puppet_pos = Vector2()
 puppet var puppet_direction = 0
+
 #Animation nodes
 onready var body = $SlimeNode
 onready var anim_player = $SlimeNode/Slime2Animation/AnimationPlayer2
@@ -45,13 +50,14 @@ const base_damage = 100
 
 #Calculate kinematic equations
 func _ready():
+	# Funcional
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
-	_set_HP(100)
-	_set_MP(100)
-	if !Game.is_net_master(self):
-		$CanvasLayer/UI.hide()
+	
+	# Vida
+	hmc._set_HP(100)
+	hmc._set_MP(100)
 
 # Configure for multiplayer
 func init(nid):
@@ -153,13 +159,13 @@ func _throw():
 	#	throw a "" of the current element,
 	#	that affect the first object impacted.
 	# var missil = 
-	if MP == 0: return
+	if hmc == 0: return
 	var slime_ball_instance = slime_ball.instance()
 	get_parent().add_child(slime_ball_instance)
 	slime_ball_instance.position = global_position
 	slime_ball_instance.launch(facing)
 	var damage = avaible_skills[current_skill].damage * current_element.damage_factor
-	hit_MP(-10)
+	hmc.hit_MP(10)
 	damage += 1
 	# missil.launch
 

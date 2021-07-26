@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Actors/Slime/Label.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Slime/SlimeFSM.gd" type="Script" id=2]
@@ -10,44 +10,10 @@
 [ext_resource path="res://src/Actors/Slime/Slime.gd" type="Script" id=8]
 [ext_resource path="res://src/Actors/Slime/Slime2Animation.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Actors/Entity base/skill_wheel_selector.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Actors/Entity base/Entity.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.96073, 5.70469 )
-
-[sub_resource type="ShaderMaterial" id=5]
-
-[sub_resource type="Theme" id=6]
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.0705882, 0.686275, 0.282353, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.490196, 0.901961, 0.517647, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 10
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.0666667, 0.494118, 0.87451, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.588235, 0.807843, 0.945098, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 0 )
 
 [node name="Slime2" type="KinematicBody2D" groups=[
 "Slime",
@@ -131,59 +97,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" type="VBoxContainer" parent="CanvasLayer"]
-margin_left = 2.40541
-margin_top = 3.0
-margin_right = 129.405
-margin_bottom = 47.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HP" type="HBoxContainer" parent="CanvasLayer/UI"]
-margin_right = 126.0
-margin_bottom = 14.0
-
-[node name="HPText" type="Label" parent="CanvasLayer/UI/HP"]
-margin_right = 18.0
-margin_bottom = 14.0
-text = "HP"
-
-[node name="HPBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
-material = SubResource( 5 )
-margin_left = 22.0
-margin_right = 122.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 100, 0 )
-size_flags_vertical = 1
-theme = SubResource( 6 )
-custom_styles/fg = SubResource( 7 )
-custom_styles/bg = SubResource( 8 )
-value = 50.0
-percent_visible = false
-
-[node name="MP" type="HBoxContainer" parent="CanvasLayer/UI"]
-margin_top = 18.0
-margin_right = 126.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 122, 14 )
-
-[node name="MPText" type="Label" parent="CanvasLayer/UI/MP"]
-margin_right = 20.0
-margin_bottom = 14.0
-text = "MP"
-
-[node name="MPBar" type="ProgressBar" parent="CanvasLayer/UI/MP"]
-margin_left = 24.0
-margin_right = 124.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 100, 14 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
-value = 50.0
-percent_visible = false
+[node name="HMC" parent="." instance=ExtResource( 11 )]
 
 [node name="SkillWheel" type="Node2D" parent="."]
 
