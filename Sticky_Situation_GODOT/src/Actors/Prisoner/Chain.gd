@@ -16,7 +16,7 @@ const MAX_HOOK_LENGHT = 400
 
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
-
+var time = 0
 # shoot() shoots the chain in a given direction
 func shoot(dir: Vector2) -> void:
 	direction = dir.normalized()	# Normalize the direction and save it

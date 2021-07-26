@@ -34,6 +34,11 @@ func _input(event):
 		if event.is_action_released("jump") and parent.velocity.y < parent.min_jump_velocity:
 			parent.velocity.y = parent.min_jump_velocity
 	
+	if event.is_action_pressed("skill_left"):
+		get_parent()._change_skill(1)
+	if event.is_action_pressed("skill_right"):
+		get_parent()._change_skill(-1)
+	
 	if event is InputEventMouseButton:
 		if event.pressed:
 			get_parent()._use_skill()
