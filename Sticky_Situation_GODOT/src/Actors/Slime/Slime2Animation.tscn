@@ -5,6 +5,7 @@
 [sub_resource type="Animation" id=1]
 resource_name = "Eat"
 length = 0.72
+loop = true
 step = 0.12
 tracks/0/type = "value"
 tracks/0/path = NodePath("slime2:frame")
@@ -158,7 +159,7 @@ position = Vector2( -0.264862, 0 )
 texture = ExtResource( 1 )
 hframes = 6
 vframes = 9
-frame = 39
+frame = 6
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/Eat = SubResource( 1 )

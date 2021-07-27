@@ -23,7 +23,7 @@ scale = Vector2( 0.2, 0.2 )
 [node name="AnimatedSprite2" parent="SlimeNode" instance=ExtResource( 4 )]
 position = Vector2( 0.256, -9 )
 scale = Vector2( 1.03934, 0.809918 )
-frame = 1
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

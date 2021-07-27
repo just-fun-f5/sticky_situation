@@ -2,6 +2,8 @@ extends StateMachine
 
 # Var error
 export var epsilon = 17
+var HOOKED = false
+var HOOK = false
 
 #Declare states
 func _ready():
@@ -9,8 +11,16 @@ func _ready():
 	add_state("run")
 	add_state("jump")
 	add_state("fall")
+	add_state("hook")
+	add_state("hooked")
 #	add_state("wall_slide")
 	call_deferred("set_state", states.idle)
+
+# Functions for HOOOK & HOOKED
+func HOOK_STATE(state):
+	HOOK = state
+func HOOKED_STATE(state):
+	HOOKED = state
 
 #Jump input
 func _input(event):	
@@ -42,8 +52,9 @@ func _input(event):
 func _state_logic(delta):
 	parent._update_move_direction()
 	parent._handle_move_input() # Calcular la vel hor
-	parent._apply_gravity(delta)
 	parent._apply_movement()
+	if not HOOKED:
+		parent._apply_gravity(delta)
 
 #Transition conditions
 func _get_transition(delta):

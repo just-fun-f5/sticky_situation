@@ -1,4 +1,3 @@
-#extends Entity
 extends KinematicBody2D
 
 const UP = Vector2.UP

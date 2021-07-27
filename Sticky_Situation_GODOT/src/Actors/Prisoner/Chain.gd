@@ -2,6 +2,7 @@
 This script controls the chain.
 """
 extends Node2D
+onready var PFSM = $"../PrisonerFSM"
 onready var parent = get_parent()
 onready var links = $Links		# A slightly easier reference to the links
 var direction := Vector2(0,0)	# The direction in which the chain was shot
@@ -17,6 +18,10 @@ const MAX_HOOK_LENGHT = 400
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
 var time = 0
+
+func _ready():
+	pass
+
 # shoot() shoots the chain in a given direction
 func shoot(dir: Vector2) -> void:
 	direction = dir.normalized()	# Normalize the direction and save it
@@ -27,7 +32,8 @@ func shoot(dir: Vector2) -> void:
 func release() -> void:
 	flying = false	# Not flying anymore	
 	hooked = false	# Not attached anymore
-
+	PFSM.HOOKED_STATE(false)
+	
 # Every graphics frame we update the visuals
 func _process(_delta: float) -> void:
 	self.visible = flying or hooked	# Only visible if flying or attached to something
@@ -48,16 +54,19 @@ func _physics_process(delta: float) -> void:
 	$Tip.global_position = tip	# The player might have moved and thus updated the position of the tip -> reset it
 	if flying:
 		# `if move_and_collide()` always moves, but returns true if we did collide
+		PFSM.HOOK_STATE(true)
 		var collision = $Tip.move_and_collide(direction * SPEED * delta * 50)
 		if collision:
+			PFSM.HOOK_STATE(false)
 			var tile_pos = collision.collider.world_to_map(collision.position - collision.normal)
 #			tile_pos -= collision.normal
 			var tile = collision.collider.get_cellv(tile_pos)
 #			if tile == 0:
 			print(tile)
 #		devolver
-			if tile == 1:
+			if tile == 1 or tile == 0:
 				hooked = true	# Got something!
+				PFSM.HOOKED_STATE(true)
 				flying = false	# Not flying anymore
 #				print(collision.collider_id)
 			else:
