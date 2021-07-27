@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/Level/Parallax_Background/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Level/Tiles_and_Platforms/AutoTile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Actors/Slime/Slime 2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Slime/Slime.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Slime/SlimeBall.tscn" type="PackedScene" id=4]
 
 [node name="DEBBUG_SLIME" type="Node2D"]
