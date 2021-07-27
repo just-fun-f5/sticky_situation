@@ -14,11 +14,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.96073, 5.70469 )
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=2]
 
-[sub_resource type="Theme" id=6]
+[sub_resource type="Theme" id=3]
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.0705882, 0.686275, 0.282353, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -31,10 +31,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 corner_detail = 10
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.0666667, 0.494118, 0.87451, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -46,7 +46,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0 )
 
 [node name="Slime2" type="KinematicBody2D" groups=[
@@ -152,15 +152,15 @@ margin_bottom = 14.0
 text = "HP"
 
 [node name="HPBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
-material = SubResource( 5 )
+material = SubResource( 2 )
 margin_left = 22.0
 margin_right = 122.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 1
-theme = SubResource( 6 )
-custom_styles/fg = SubResource( 7 )
-custom_styles/bg = SubResource( 8 )
+theme = SubResource( 3 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 value = 50.0
 percent_visible = false
 
@@ -180,8 +180,8 @@ margin_left = 24.0
 margin_right = 124.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 100, 14 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
 value = 50.0
 percent_visible = false
 

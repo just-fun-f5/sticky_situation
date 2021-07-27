@@ -13,8 +13,8 @@ func _ready():
 func _input(event):
 	if !Game.is_net_master(self):
 		return
-	if event.is_action_pressed("mb_right"):#
-		parent._throw()
+	if event.is_action_pressed("mb_right"):
+		parent._use_skill()
 	#Jump normally if run or idle state
 	if [states.idle, states.run].has(state):
 		if event.is_action_pressed("jump"):
@@ -35,10 +35,6 @@ func _input(event):
 		get_parent()._change_skill(1)
 	if event.is_action_pressed("skill_right"):
 		get_parent()._change_skill(-1)
-	
-	if event is InputEventMouseButton:
-		if event.pressed:
-			get_parent()._use_skill()
 
 func _state_logic(delta):
 	#We determine move direction
