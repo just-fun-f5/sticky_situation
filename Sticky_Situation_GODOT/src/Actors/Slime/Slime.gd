@@ -155,6 +155,9 @@ func _handle_wall_slide_sticking():
 
 
 # ---------------- SKILLS ----------------
+
+onready var SkillWheel = $SkillWheel/SkillWheel
+
 func _throw():
 	#	throw a "" of the current element,
 	#	that affect the first object impacted.
@@ -184,7 +187,7 @@ func _eat():
 func _change_skill(direction):
 	var pos = 1 if (direction > 0) else 2
 	current_skill = int(abs(current_skill + pos)) % 3
-	$SkillWheel/skill_wheel_selector/SkillWheel.move_wheel(direction)
+	SkillWheel.move_wheel(direction)
 	print(avaible_skills[current_skill].skill_name)
 
 func _use_skill():

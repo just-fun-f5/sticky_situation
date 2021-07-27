@@ -18,7 +18,6 @@ func _ready() -> void:
 			var player = create_prisoner(nid)
 		
 
-
 func _end_game_id(id):
 	_end_game()
 	
@@ -41,8 +40,6 @@ func create_slime(nid):
 	return slime
 
 #Particulas 
-
-
 
 export(PackedScene) var blood : PackedScene
 

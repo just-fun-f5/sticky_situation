@@ -126,6 +126,7 @@ func _on_Prisoner_pressed():
 	if type_available:
 		_update_player_type(my_id, new_type)
 		_update_player_ui(my_id, new_type)
+		
 func _on_Exit_pressed():
 	var me = Game.players.keys()[0]
 	_remove_player(me)

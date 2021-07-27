@@ -99,9 +99,7 @@ __meta__ = {
 
 [node name="HMC" parent="." instance=ExtResource( 11 )]
 
-[node name="SkillWheel" type="Node2D" parent="."]
-
-[node name="skill_wheel_selector" parent="SkillWheel" instance=ExtResource( 10 )]
+[node name="SkillWheel" parent="." instance=ExtResource( 10 )]
 offset = Vector2( 50, 50 )
 transform = Transform2D( 1, 0, 0, 1, 50, 50 )
 follow_viewport_enable = true

@@ -23,7 +23,7 @@ scale = Vector2( 0.2, 0.2 )
 [node name="AnimatedSprite2" parent="SlimeNode" instance=ExtResource( 4 )]
 position = Vector2( 0.256, -9 )
 scale = Vector2( 1.03934, 0.809918 )
-frame = 8
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -95,9 +95,5 @@ __meta__ = {
 }
 
 [node name="HMC" parent="." instance=ExtResource( 6 )]
-margin_left = -0.530937
-margin_top = -18.8173
-margin_right = -0.530937
-margin_bottom = -18.8173
 
 [connection signal="timeout" from="WallSlideStickyTimer" to="PrisonerFSM" method="_on_WallSlideStickyTimer_timeout"]
