@@ -1,4 +1,4 @@
-extends Entity
+extends KinematicBody2D
 
 const UP = Vector2.UP
 const WALL_JUMP_VELOCITY = Vector2(400, -250)
@@ -33,6 +33,8 @@ onready var sprites = {
 	"ice": $Slime2Animation/slime2,
 	"slime": $Slime2Animation/slime2,
 }
+#hmc
+onready var hmc = $hmc
 # FSM
 onready var FSM = $SlimeFSM
 #Raycast nodes
@@ -60,8 +62,8 @@ func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
-	_set_HP(100)
-	_set_MP(100)
+	hmc._set_HP(100)
+	hmc._set_MP(100)
 	if !Game.is_net_master(self):
 		$CanvasLayer/UI.hide()
 
@@ -171,7 +173,7 @@ func _throw():
 	slime_ball_instance.launch(facing)
 	var damage = avaible_skills[current_skill].damage * current_element.damage_factor
 	var mana  = avaible_skills[current_skill].mana
-	hit_MP(-mana)
+	hmc.hit_MP(-mana)
 	damage += 1
 	# missil.launch
 	
@@ -180,7 +182,7 @@ func _explode():
 	#	and drain all the remaining mana
 	#$Current_Element.explode()
 	var mana  = avaible_skills[current_skill].mana
-	hit_MP(-mana)
+	hmc.hit_MP(-mana)
 	return "explode"
 
 func _on_EatArea_area_entered(area):
@@ -217,7 +219,7 @@ func _eat():
 	var mana  = avaible_skills[current_skill].mana
 	
 	if FSM.state in [FSM.states["idle"], FSM.states["run"]]:
-		hit_MP(-mana)
+		hmc.hit_MP(-mana)
 		return "eat"
 	
 func _change_skill(direction):
@@ -229,7 +231,7 @@ func _change_skill(direction):
 func _use_skill():
 	#	Uses the current skill
 	print(avaible_skills[current_skill].skill_name)
-	if avaible_skills[current_skill].mana > MP:
+	if avaible_skills[current_skill].mana > hmc.MP:
 		return
 	
 	
