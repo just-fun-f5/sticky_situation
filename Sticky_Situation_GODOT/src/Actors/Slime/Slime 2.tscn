@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://src/Actors/Slime/Slime2Animation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Slime/Animations/Slime2Animation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Slime/Slime 2.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/Slime/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://src/Actors/Slime/SlimeFSM.gd" type="Script" id=4]

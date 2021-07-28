@@ -1,148 +1,139 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=56 format=2]
 
-[ext_resource path="res://src/Actors/Slime/Label.gd" type="Script" id=1]
-[ext_resource path="res://src/Actors/Slime/SlimeFSM.gd" type="Script" id=2]
-[ext_resource path="res://src/Actors/Resources/_throw.tres" type="Resource" id=3]
-[ext_resource path="res://src/Actors/Resources/_eat.tres" type="Resource" id=4]
-[ext_resource path="res://src/Actors/Resources/Slime.tres" type="Resource" id=5]
-[ext_resource path="res://src/Actors/Slime/Camera2D.gd" type="Script" id=6]
-[ext_resource path="res://src/Actors/Resources/_explode.tres" type="Resource" id=7]
-[ext_resource path="res://src/Actors/Slime/Slime.gd" type="Script" id=8]
-[ext_resource path="res://assets/art/actors/Slime/en_ex.png" type="Texture" id=9]
-[ext_resource path="res://src/Actors/Entity base/skill_wheel_selector.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/art/actors/Slime/slime_frames_fire.png" type="Texture" id=11]
-[ext_resource path="res://assets/art/actors/Slime/slime_frames_all.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/actors/Slime/en_ex.png" type="Texture" id=1]
+[ext_resource path="res://assets/art/actors/Slime/slime_frames_fire.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/actors/Slime/slime_frames_all.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 96, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 160, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 1 )
 region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 96, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 128, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 2 )
 region = Rect2( 160, 128, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=34]
@@ -217,75 +208,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
-}
-
-[sub_resource type="Animation" id=46]
-resource_name = "Eat"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/path = NodePath("slime2:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 7, 8, 9, 10, 11 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("slime2:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 9 ), ExtResource( 12 ) ]
-}
-
-[sub_resource type="Animation" id=47]
-resource_name = "Eat_fire"
-length = 1.2
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("fire:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Eat" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("fire:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.45, 0.6, 0.75, 0.95 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 3, 4, 5 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../EatArea/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.2, 0.35 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -450,6 +372,105 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ) ]
 }
 
+[sub_resource type="Animation" id=45]
+resource_name = "run_fire"
+length = 0.75
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Move" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fire:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "Eat"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("slime2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 7, 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("slime2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "Eat_fire"
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Eat" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fire:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.45, 0.6, 0.75, 0.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 3, 4, 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../EatArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
 [sub_resource type="Animation" id=48]
 length = 0.7
 tracks/0/type = "value"
@@ -474,7 +495,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ), ExtResource( 12 ) ]
+"values": [ ExtResource( 1 ), ExtResource( 3 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("slime2:hframes")
@@ -518,36 +539,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ) ]
-}
-
-[sub_resource type="Animation" id=45]
-resource_name = "run_fire"
-length = 0.75
-loop = true
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("fire:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Move" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("fire:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
 }
 
 [sub_resource type="Animation" id=51]
@@ -595,78 +586,25 @@ tracks/1/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 6.96073, 5.70469 )
+[node name="Slime2Animation" type="Node2D"]
 
-[sub_resource type="ShaderMaterial" id=54]
-
-[sub_resource type="Theme" id=55]
-
-[sub_resource type="StyleBoxFlat" id=56]
-bg_color = Color( 0.0705882, 0.686275, 0.282353, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.490196, 0.901961, 0.517647, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 10
-
-[sub_resource type="StyleBoxFlat" id=57]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=58]
-bg_color = Color( 0.0666667, 0.494118, 0.87451, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.588235, 0.807843, 0.945098, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=59]
-bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="CircleShape2D" id=60]
-radius = 5.0
-
-[node name="Slime2" type="KinematicBody2D" groups=[
-"Slime",
-]]
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_horizontal_guides_": [ -37.0083 ]
-}
-current_element = ExtResource( 5 )
-avaible_skills = [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ) ]
-
-[node name="Slime2Animation" type="Node2D" parent="."]
-position = Vector2( -1, 5.1354 )
-
-[node name="slime2" type="Sprite" parent="Slime2Animation"]
+[node name="slime2" type="Sprite" parent="."]
 visible = false
-texture = ExtResource( 9 )
+texture = ExtResource( 3 )
 hframes = 6
 vframes = 6
-frame = 24
+frame = 13
 
-[node name="fire" type="AnimatedSprite" parent="Slime2Animation"]
+[node name="fire" type="AnimatedSprite" parent="."]
 frames = SubResource( 34 )
 animation = "Eat"
+frame = 2
 
-[node name="ice" type="Sprite" parent="Slime2Animation"]
+[node name="ice" type="Sprite" parent="."]
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Slime2Animation"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/Dead = SubResource( 35 )
 anims/Dead_fire = SubResource( 36 )
-anims/Eat = SubResource( 46 )
-anims/Eat_fire = SubResource( 47 )
 anims/Fall = SubResource( 37 )
 anims/Fall_fire = SubResource( 38 )
 anims/Idle = SubResource( 39 )
@@ -675,160 +613,11 @@ anims/Idle_ice = SubResource( 41 )
 anims/Jump = SubResource( 42 )
 anims/Jump_fire = SubResource( 43 )
 anims/Move = SubResource( 44 )
+anims/Move_fire = SubResource( 45 )
+anims/eat = SubResource( 46 )
+anims/eat_fire = SubResource( 47 )
 anims/explode = SubResource( 48 )
 anims/explode_fire = SubResource( 49 )
 anims/run = SubResource( 50 )
-anims/run_fire = SubResource( 45 )
 anims/wall_slide = SubResource( 51 )
 anims/wall_slide_fire = SubResource( 52 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 53 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -1, 0 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
-limit_smoothed = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-script = ExtResource( 6 )
-
-[node name="SlimeFSM" type="Node2D" parent="."]
-script = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="SlimeFSM"]
-visible = false
-margin_left = -35.479
-margin_top = -40.0
-margin_right = 35.521
-margin_bottom = -26.0
-text = "test"
-align = 1
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WallRaycast" type="Node2D" parent="."]
-
-[node name="RightWallRaycasts" type="Node2D" parent="WallRaycast"]
-
-[node name="RightWallRaycast" type="RayCast2D" parent="WallRaycast/RightWallRaycasts"]
-position = Vector2( 7.0169, 0 )
-rotation = -1.5708
-scale = Vector2( 0.5, 1 )
-enabled = true
-cast_to = Vector2( 0, 1 )
-
-[node name="LeftWallRaycasts" type="Node2D" parent="WallRaycast"]
-position = Vector2( -1, 0 )
-
-[node name="LefttWallRaycast" type="RayCast2D" parent="WallRaycast/LeftWallRaycasts"]
-position = Vector2( -6.01403, 0 )
-rotation = 1.5708
-scale = Vector2( 0.5, 1 )
-enabled = true
-cast_to = Vector2( 0, 1 )
-
-[node name="WallSlideCooldown" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
-[node name="WallSlideStickyTimer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
-[node name="Name" type="Label" parent="."]
-margin_left = -20.023
-margin_top = -24.0
-margin_right = 19.977
-margin_bottom = -10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" type="VBoxContainer" parent="CanvasLayer"]
-margin_left = 2.40541
-margin_top = 3.0
-margin_right = 129.405
-margin_bottom = 47.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HP" type="HBoxContainer" parent="CanvasLayer/UI"]
-margin_right = 126.0
-margin_bottom = 14.0
-
-[node name="HPText" type="Label" parent="CanvasLayer/UI/HP"]
-margin_right = 18.0
-margin_bottom = 14.0
-text = "HP"
-
-[node name="HPBar" type="ProgressBar" parent="CanvasLayer/UI/HP"]
-material = SubResource( 54 )
-margin_left = 22.0
-margin_right = 122.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 100, 0 )
-size_flags_vertical = 1
-theme = SubResource( 55 )
-custom_styles/fg = SubResource( 56 )
-custom_styles/bg = SubResource( 57 )
-value = 50.0
-percent_visible = false
-
-[node name="MP" type="HBoxContainer" parent="CanvasLayer/UI"]
-margin_top = 18.0
-margin_right = 126.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 122, 14 )
-
-[node name="MPText" type="Label" parent="CanvasLayer/UI/MP"]
-margin_right = 20.0
-margin_bottom = 14.0
-text = "MP"
-
-[node name="MPBar" type="ProgressBar" parent="CanvasLayer/UI/MP"]
-margin_left = 24.0
-margin_right = 124.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 100, 14 )
-custom_styles/fg = SubResource( 58 )
-custom_styles/bg = SubResource( 59 )
-value = 50.0
-percent_visible = false
-
-[node name="SkillWheel" type="Node2D" parent="."]
-
-[node name="skill_wheel_selector" parent="SkillWheel" instance=ExtResource( 10 )]
-offset = Vector2( 50, 50 )
-transform = Transform2D( 1, 0, 0, 1, 50, 50 )
-follow_viewport_enable = true
-
-[node name="EatArea" type="Area2D" parent="."]
-show_behind_parent = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EatArea"]
-position = Vector2( 5, 0 )
-shape = SubResource( 60 )
-disabled = true
-
-[node name="enemy" type="Sprite" parent="EatArea"]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-
-[node name="eatingTimer" type="Timer" parent="EatArea"]
-one_shot = true
-
-[node name="passiveDamage" type="Timer" parent="EatArea"]
-
-[connection signal="animation_finished" from="Slime2Animation/AnimationPlayer2" to="SlimeFSM" method="_on_AnimationPlayer2_animation_finished"]
-[connection signal="timeout" from="WallSlideStickyTimer" to="SlimeFSM" method="_on_WallSlideStickyTimer_timeout"]
-[connection signal="area_entered" from="EatArea" to="." method="_on_EatArea_area_entered"]
-[connection signal="timeout" from="EatArea/eatingTimer" to="." method="_on_eatingTimer_timeout"]
-[connection signal="timeout" from="EatArea/passiveDamage" to="." method="_on_passiveDamage_timeout"]

@@ -6,4 +6,5 @@
 script = ExtResource( 1 )
 skill_name = "_eat"
 animation_name = "Idle"
-damage = 10.0
+damage = 0
+mana = 30

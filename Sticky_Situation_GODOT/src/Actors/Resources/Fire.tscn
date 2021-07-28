@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Actors/Resources/Fire.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/actors/Slime/fire_element.png" type="Texture" id=2]
+[ext_resource path="res://src/Actors/Resources/Fire.tres" type="Resource" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 6.78581
+height = 1.05544
+
+[node name="StaticBody2D" type="Area2D"]
+script = ExtResource( 1 )
+element = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="." to="." method="_on_StaticBody2D_body_entered"]
