@@ -31,9 +31,15 @@ puppet var puppet_pos = Vector2()
 puppet var puppet_direction = 0
 
 #Animation nodes
-onready var body = $SlimeNode
-onready var anim_player = $SlimeNode/Slime2Animation/AnimationPlayer2
-
+onready var body = $Slime2Animation
+onready var anim_player = $Slime2Animation/AnimationPlayer2
+onready var sprites = {
+	"fire" : $Slime2Animation/fire,
+	"ice": $Slime2Animation/slime2,
+	"slime": $Slime2Animation/slime2,
+}
+# FSM
+onready var FSM = $SlimeFSM
 #Raycast nodes
 onready var left_wall_raycasts = $WallRaycast/LeftWallRaycasts
 onready var right_wall_raycasts = $WallRaycast/RightWallRaycasts
@@ -47,6 +53,12 @@ export (Resource) var current_element
 export (Array, Resource) var avaible_skills
 var current_skill = 0
 const base_damage = 100
+var used_skill = ""
+onready var enemy_pos = $EatArea/enemy
+onready var eating_timer = $EatArea/eatingTimer
+onready var passive_damage = $EatArea/passiveDamage
+onready var eating_collision_shape = $EatArea/CollisionShape2D
+var captured_enemy
 
 #Calculate kinematic equations
 func _ready():
@@ -162,28 +174,62 @@ func _throw():
 	#	throw a "" of the current element,
 	#	that affect the first object impacted.
 	# var missil = 
-	if hmc.MP == 0: return
+
 	var slime_ball_instance = slime_ball.instance()
 	get_parent().add_child(slime_ball_instance)
 	slime_ball_instance.position = global_position
 	slime_ball_instance.launch(facing)
 	var damage = avaible_skills[current_skill].damage * current_element.damage_factor
-	hmc.hit_MP(10)
+	var mana  = avaible_skills[current_skill].mana
+	hit_MP(-mana)
 	damage += 1
 	# missil.launch
-
+	
 func _explode():
 	#	make a radial explosion, that affects "x" area
 	#	and drain all the remaining mana
 	#$Current_Element.explode()
-	pass
+	var mana  = avaible_skills[current_skill].mana
+	hit_MP(-mana)
+	return "explode"
 
+func _on_EatArea_area_entered(area):
+	if area.is_in_group("Enemies"):
+		enemy_pos.texture = area.get_node("eated").texture
+		captured_enemy = area
+		enemy_pos.visible = true
+		eating_timer.start()
+		passive_damage.start(0.5)
+		captured_enemy.visible = false
+		FSM.set_state(FSM.states.eating)
+		eating_collision_shape.disabled = true
+		
+		
+
+func _on_eatingTimer_timeout():
+	captured_enemy.visible = true
+	captured_enemy = null
+	enemy_pos.texture = null
+	enemy_pos.visible = false
+	FSM.set_state(FSM.states.idle)
+	FSM.is_skill_used = false
+	
+
+func _on_passiveDamage_timeout():
+	if captured_enemy != null:
+		captured_enemy.hit(avaible_skills[current_skill].damage)
+
+		
 func _eat():
 	#	eat the nearest enemy, which get a passive damage
 	#	the partner can affect the enemy when is inside the
 	# 	slime
-	pass
-
+	var mana  = avaible_skills[current_skill].mana
+	
+	if FSM.state in [FSM.states["idle"], FSM.states["run"]]:
+		hit_MP(-mana)
+		return "eat"
+	
 func _change_skill(direction):
 	var pos = 1 if (direction > 0) else 2
 	current_skill = int(abs(current_skill + pos)) % 3
@@ -192,15 +238,27 @@ func _change_skill(direction):
 
 func _use_skill():
 	#	Uses the current skill
-	var temp = 0
-	call(avaible_skills[current_skill].skill_name)
-	anim_player.play(avaible_skills[current_skill].animation_name)
-	print("Hey")
-	pass
-
-# ---------------- SKILLS ----------------
+	print(avaible_skills[current_skill].skill_name)
+	if avaible_skills[current_skill].mana > MP:
+		return
+	
+	
+	used_skill = call(avaible_skills[current_skill].skill_name)
+	$Slime2Animation/AnimationPlayer2.play(avaible_skills[current_skill].animation_name)
+	return used_skill
+# ---------------- ELEMENTS ----------------
 func _absorb(element):
 	current_element = element
-	$SlimeNode/Slime2Animation/slime2.modulate = current_element.color
+	set_current_sprite(element.name.to_lower())
+	
+func set_current_sprite(element):
+	for key in sprites.keys():
+		sprites[key].visible = (key == element)
 
 # ---------------- MANA/HP ---------------
+
+
+
+
+
+
