@@ -1,43 +1,52 @@
-class_name Entity
-extends KinematicBody2D
+extends CanvasLayer
 
 # Constantes
 var maxHP = 100 setget _set_maxHP
 var maxMP = 100 setget _set_maxMP
+onready var MP_Bar = $UI/MP/MPBar
+onready var HP_Bar = $UI/HP/HPBar
 
 # Vars
 var HP: float = 100 setget _set_HP
 var MP: float = 100 setget _set_MP
 
+func _ready():
+	self.hit_HP(50)
+
+func _always_on(value):
+	MP_Bar.visible = value
+	HP_Bar.visible = value
+
 # Sets MAXS
 # Setea el maximo de cada cantidad
+
 func _set_maxMP(maxValue):
 	maxMP = maxValue
-	$CanvasLayer/UI/HP/MPBar.max_value = maxMP
+	MP_Bar.max_value = maxMP
 func _set_maxHP(maxValue):
 	maxHP = maxValue
-	$CanvasLayer/UI/MP/HPBar.max_value = maxHP
+	HP_Bar.max_value = maxHP
 
 # Sets Value
 # Setea la cantidad actual del valor entre 0 y su maximo
 func _set_HP(value):
 	HP = clamp(value, 0, maxHP)
-	$CanvasLayer/UI/HP/HPBar.value = HP
-	return true if HP <= 0 else false
+	HP_Bar.value = HP
+	return HP <= 0 
 func _set_MP(value):
 	MP = clamp(value, 0, maxMP)
-	$CanvasLayer/UI/MP/MPBar.value = MP
-	return true if MP <= 0 else false
+	MP_Bar.value = MP
+	return MP <= 0
 
 # Modificadores absolutos
 # Modifica una cantidad fija a la cantidad actual
 func hit_HP(quantity):
 	var state
-	state = self._set_HP(HP + quantity)
+	state = _set_HP(HP - quantity)
 	return state
 func hit_MP(quantity):
 	var state
-	state = self._set_MP(MP + quantity)
+	state = _set_MP(MP - quantity)
 	return state
 
 # Modificadores porcentuales absolutos
