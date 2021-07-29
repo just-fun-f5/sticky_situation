@@ -1,21 +1,488 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/Multiplayer/Lobby.gd" type="Script" id=1]
 [ext_resource path="res://src/Level/Parallax_Background/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/art/just-fun-logo.png" type="Texture" id=3]
+[ext_resource path="res://src/Level/Tiles_and_Platforms/tiles.tres" type="TileSet" id=4]
+[ext_resource path="res://assets/art/actors/Slime/slime_frames_all.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/actors/Slime/en_ex.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Computer says no.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://src/Main/menuButton.gd" type="Script" id=8]
+[ext_resource path="res://assets/art/tileset/AutoBrick/brickTileset.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=39]
+size = 64
+font_data = ExtResource( 7 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 160, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 6 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 6 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "Dead",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "Eat",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "Explode",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "Wall_Slide",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "Move",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=40]
+resource_name = "blink"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PressStartLabel:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=41]
+size = 48
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=43]
+size = 32
+font_data = ExtResource( 7 )
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[node name="Lobby" type="Node2D"]
+[sub_resource type="Animation" id=38]
+resource_name = "splashscreen"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 1.8, 2.2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Splashscreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "toMenu"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/PressStart/Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 64 ), Vector2( 0, 48 ), Vector2( 0, 32 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/MainMenu/Play:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 448, 640 ), Vector2( 448, 336 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/MainMenu/Credits:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 416, 788 ), Vector2( 416, 788 ), Vector2( 416, 408 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/MainMenu/Exit:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 448, 836 ), Vector2( 448, 836 ), Vector2( 448, 484 ) ]
+}
+
+[node name="Lobby" type="Control"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [  ]
+"_edit_use_anchors_": false
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="PressStart" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressStartLabel" type="Label" parent="CanvasLayer/PressStart"]
+modulate = Color( 1, 1, 1, 0.446026 )
+margin_top = 384.0
+margin_right = 1024.0
+margin_bottom = 425.0
+custom_fonts/font = SubResource( 39 )
+text = "Press Enter"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer/PressStart"]
+position = Vector2( 0, 64 )
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer/PressStart/Node2D"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262192, 0, 196608, 262193, 0, 262147, 262194, 0, 1, 262195, 0, 1, 262196, 0, 262146, 262197, 0, 196610, 327729, 0, 131072, 327730, 0, 131073, 327731, 0, 131073, 327732, 0, 131074, 393221, 1, 131076, 393222, 1, 196609, 393223, 1, 196609, 393224, 1, 196610, 393226, 1, 196608, 393227, 1, 196609, 393228, 1, 131078, 393229, 1, 196609, 393230, 1, 196610, 393232, 1, 196608, 393233, 1, 196609, 393234, 1, 131078, 393235, 1, 196609, 393236, 1, 196610, 393238, 1, 131076, 393239, 1, 196609, 393240, 1, 196609, 393241, 1, 196610, 393243, 1, 3, 393246, 1, 196611, 393248, 1, 3, 393252, 1, 3, 458757, 1, 65539, 458764, 1, 65539, 458770, 1, 65539, 458774, 1, 65539, 458779, 1, 65539, 458781, 1, 196611, 458784, 1, 131075, 458788, 1, 131075, 524293, 1, 196612, 524294, 1, 196609, 524295, 1, 196609, 524296, 1, 131077, 524300, 1, 65539, 524306, 1, 65539, 524310, 1, 65539, 524315, 1, 131079, 524316, 1, 196610, 524321, 1, 196608, 524322, 1, 131078, 524323, 1, 196610, 524327, 1, 196608, 524328, 1, 262147, 524329, 1, 1, 524330, 1, 1, 524331, 1, 1, 524332, 1, 1, 524333, 1, 262146, 524334, 1, 196610, 589832, 1, 65539, 589836, 1, 65539, 589842, 1, 65539, 589846, 1, 65539, 589851, 1, 65539, 589853, 1, 196611, 589858, 1, 65539, 589864, 0, 131072, 589865, 0, 5, 589866, 0, 65537, 589867, 0, 65537, 589868, 0, 4, 589869, 0, 131074, 589873, 1, 196608, 589874, 1, 262147, 589875, 1, 1, 589876, 1, 262146, 589877, 1, 196610, 655365, 1, 196608, 655366, 1, 196609, 655367, 1, 196609, 655368, 1, 196613, 655372, 1, 131075, 655376, 1, 196608, 655377, 1, 196609, 655378, 1, 196614, 655379, 1, 196609, 655380, 1, 196610, 655382, 1, 196612, 655383, 1, 196609, 655384, 1, 196609, 655385, 1, 196610, 655387, 1, 131075, 655390, 1, 196611, 655394, 1, 131075, 655401, 0, 131072, 655402, 0, 131073, 655403, 0, 131073, 655404, 0, 131074, 655410, 0, 131072, 655411, 0, 131073, 655412, 0, 131074, 786437, 0, 131076, 786438, 0, 196609, 786439, 0, 196609, 786440, 0, 196610, 786442, 0, 196608, 786443, 0, 196609, 786444, 0, 131078, 786445, 0, 196609, 786446, 0, 196610, 786448, 0, 196608, 786449, 0, 196609, 786450, 0, 131078, 786451, 0, 196609, 786452, 0, 196610, 786454, 0, 3, 786457, 0, 3, 786460, 0, 196608, 786461, 0, 196610, 786464, 0, 196608, 786465, 0, 196609, 786466, 0, 131078, 786467, 0, 196609, 786468, 0, 196610, 786470, 0, 196608, 786471, 0, 196609, 786472, 0, 131078, 786473, 0, 196609, 786474, 0, 196610, 786477, 0, 196608, 786478, 0, 196609, 786479, 0, 196610, 786482, 0, 3, 786485, 0, 3, 851973, 0, 65539, 851980, 0, 65539, 851986, 0, 65539, 851990, 0, 65539, 851993, 0, 65539, 851995, 0, 3, 851998, 0, 3, 852002, 0, 65539, 852008, 0, 65539, 852012, 0, 3, 852016, 0, 3, 852018, 0, 131079, 852019, 0, 196610, 852021, 0, 65539, 917509, 0, 196612, 917510, 0, 196609, 917511, 0, 196609, 917512, 0, 131077, 917516, 0, 65539, 917522, 0, 65539, 917526, 0, 65539, 917529, 0, 65539, 917531, 0, 65539, 917534, 0, 65539, 917538, 0, 65539, 917544, 0, 65539, 917548, 0, 65539, 917552, 0, 65539, 917554, 0, 65539, 917556, 0, 196608, 917557, 0, 196615, 983048, 0, 65539, 983052, 0, 65539, 983058, 0, 65539, 983062, 0, 131075, 983065, 0, 131075, 983067, 0, 131079, 983068, 0, 196609, 983069, 0, 196609, 983070, 0, 196615, 983074, 0, 65539, 983080, 0, 65539, 983084, 0, 131075, 983088, 0, 131075, 983090, 0, 65539, 983093, 0, 65539, 1048581, 0, 196608, 1048582, 0, 196609, 1048583, 0, 196609, 1048584, 0, 196613, 1048586, 0, 196608, 1048587, 0, 196609, 1048588, 0, 196614, 1048589, 0, 196609, 1048590, 0, 196610, 1048594, 0, 131075, 1048599, 0, 196608, 1048600, 0, 196610, 1048603, 0, 131075, 1048606, 0, 131075, 1048610, 0, 131075, 1048614, 0, 196608, 1048615, 0, 196609, 1048616, 0, 196614, 1048617, 0, 196609, 1048618, 0, 196610, 1048621, 0, 196608, 1048622, 0, 196609, 1048623, 0, 196610, 1048626, 0, 131075, 1048629, 0, 131075 )
+
+[node name="slime" type="AnimatedSprite" parent="CanvasLayer/PressStart/Node2D"]
+position = Vector2( 656, 112 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+frames = SubResource( 37 )
+animation = "Idle"
+frame = 2
+playing = true
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PressStart"]
+anims/blink = SubResource( 40 )
+
+[node name="MainMenu" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.125122
+margin_right = 0.125122
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="ToolButton" parent="CanvasLayer/MainMenu"]
+margin_left = 448.0
+margin_top = 640.0
+margin_right = 576.0
+margin_bottom = 688.0
+rect_min_size = Vector2( 128, 48 )
+custom_fonts/font = SubResource( 41 )
+text = "Play"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/MainMenu/Play"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 48, 48 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Credits" type="ToolButton" parent="CanvasLayer/MainMenu"]
+margin_left = 416.0
+margin_top = 788.0
+margin_right = 608.001
+margin_bottom = 836.0
+rect_min_size = Vector2( 192, 48 )
+custom_fonts/font = SubResource( 41 )
+text = "Credits"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/MainMenu/Credits"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 48, 48 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="ToolButton" parent="CanvasLayer/MainMenu"]
+margin_left = 448.0
+margin_top = 836.0
+margin_right = 576.0
+margin_bottom = 884.0
+rect_min_size = Vector2( 128, 48 )
+custom_fonts/font = SubResource( 41 )
+text = "Exit"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/MainMenu/Exit"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 48, 48 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Splashscreen" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Splashscreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Splashscreen/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CanvasLayer/Splashscreen/ColorRect/CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="just-fun-logo" type="Sprite" parent="CanvasLayer/Splashscreen/ColorRect/CenterContainer/Control"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+
+[node name="Panel" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -24,8 +491,25 @@ margin_left = -172.0
 margin_top = -100.0
 margin_right = 172.0
 margin_bottom = 100.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_right = -136.0
+margin_bottom = -68.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 48, 48 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="Connect" type="VBoxContainer" parent="CanvasLayer/Panel"]
@@ -33,74 +517,95 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -125.0
-margin_top = -44.0
-margin_right = 125.0
-margin_bottom = 62.0
+margin_left = -88.0
+margin_top = -45.431
+margin_right = 162.0
+margin_bottom = 119.569
 rect_min_size = Vector2( 250, 0 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Connect"]
 margin_right = 250.0
-margin_bottom = 14.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 43 )
 text = "Name:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Connect"]
-margin_top = 18.0
+margin_top = 25.0
 margin_right = 250.0
-margin_bottom = 42.0
+margin_bottom = 56.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Name" type="LineEdit" parent="CanvasLayer/Panel/Connect/HBoxContainer"]
 margin_right = 186.0
-margin_bottom = 24.0
+margin_bottom = 31.0
 size_flags_horizontal = 3
+custom_fonts/font = SubResource( 43 )
 text = "Player"
+caret_blink = true
+caret_blink_speed = 0.5
 
 [node name="Host" type="Button" parent="CanvasLayer/Panel/Connect/HBoxContainer"]
 margin_left = 190.0
 margin_right = 250.0
-margin_bottom = 24.0
+margin_bottom = 31.0
 rect_min_size = Vector2( 60, 0 )
+custom_fonts/font = SubResource( 43 )
 text = "Host"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel/Connect"]
-margin_top = 46.0
+margin_top = 60.0
 margin_right = 250.0
-margin_bottom = 60.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 43 )
 text = "IP:"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/Connect"]
-margin_top = 64.0
+margin_top = 85.0
 margin_right = 250.0
-margin_bottom = 88.0
+margin_bottom = 116.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="IP" type="LineEdit" parent="CanvasLayer/Panel/Connect/HBoxContainer2"]
 margin_right = 186.0
-margin_bottom = 24.0
+margin_bottom = 31.0
 size_flags_horizontal = 3
+custom_fonts/font = SubResource( 43 )
 text = "127.0.0.1"
+caret_blink = true
+caret_blink_speed = 0.5
 
 [node name="Join" type="Button" parent="CanvasLayer/Panel/Connect/HBoxContainer2"]
 margin_left = 190.0
 margin_right = 250.0
-margin_bottom = 24.0
+margin_bottom = 31.0
 rect_min_size = Vector2( 60, 0 )
+custom_fonts/font = SubResource( 43 )
 text = "Join"
 
 [node name="Error" type="Label" parent="CanvasLayer/Panel/Connect"]
 modulate = Color( 1, 0, 1, 1 )
-margin_top = 92.0
+margin_top = 120.0
 margin_right = 250.0
-margin_bottom = 106.0
+margin_bottom = 134.0
 align = 1
+
+[node name="RetButton" type="Button" parent="CanvasLayer/Panel/Connect"]
+margin_top = 138.0
+margin_right = 250.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 43 )
+text = "Return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Waiting" type="VBoxContainer" parent="CanvasLayer/Panel"]
 visible = false
@@ -119,26 +624,28 @@ __meta__ = {
 }
 
 [node name="TopSection" type="HBoxContainer" parent="CanvasLayer/Panel/Waiting"]
-margin_right = 290.0
-margin_bottom = 20.0
+margin_right = 356.0
+margin_bottom = 27.0
 alignment = 2
 
 [node name="Exit" type="Button" parent="CanvasLayer/Panel/Waiting/TopSection"]
 material = SubResource( 1 )
-margin_left = 271.0
-margin_right = 290.0
-margin_bottom = 20.0
+margin_left = 334.0
+margin_right = 356.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 43 )
 text = "x"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Waiting"]
-margin_top = 24.0
-margin_right = 290.0
-margin_bottom = 38.0
+margin_top = 31.0
+margin_right = 356.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 43 )
 text = "Players:"
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Panel/Waiting"]
-margin_top = 42.0
-margin_right = 290.0
+margin_top = 56.0
+margin_right = 356.0
 margin_bottom = 106.0
 rect_clip_content = true
 size_flags_vertical = 3
@@ -146,13 +653,13 @@ size_flags_vertical = 3
 [node name="Players" type="VBoxContainer" parent="CanvasLayer/Panel/Waiting/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 283.0
-margin_bottom = 57.0
+margin_right = 349.0
+margin_bottom = 43.0
 rect_clip_content = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Waiting"]
 margin_top = 110.0
-margin_right = 290.0
+margin_right = 356.0
 margin_bottom = 150.0
 
 [node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
@@ -163,39 +670,52 @@ custom_styles/separator = SubResource( 2 )
 
 [node name="Ready" type="CheckButton" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
 margin_left = 8.0
-margin_right = 153.0
+margin_right = 178.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 43 )
 text = "Not Ready"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
-margin_left = 157.0
-margin_right = 161.0
+margin_left = 182.0
+margin_right = 186.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 custom_styles/separator = SubResource( 2 )
 
 [node name="Slime" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
-margin_left = 165.0
-margin_right = 213.0
+margin_left = 190.0
+margin_right = 252.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 43 )
 text = "Slime"
 
 [node name="VSeparator3" type="VSeparator" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
-margin_left = 217.0
-margin_right = 221.0
+margin_left = 256.0
+margin_right = 260.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 custom_styles/separator = SubResource( 2 )
 
 [node name="Prisoner" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
-margin_left = 225.0
-margin_right = 290.0
+margin_left = 264.0
+margin_right = 356.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 43 )
 text = "Prisoner"
 __meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -205,6 +725,14 @@ scale = Vector2( 2, 2 )
 transform = Transform2D( 2, 0, 0, 2, 0, 400 )
 follow_viewport_enable = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/splashscreen = SubResource( 38 )
+anims/toMenu = SubResource( 42 )
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/Exit" to="." method="exit_game"]
+[connection signal="pressed" from="CanvasLayer/Panel/Connect/RetButton" to="." method="_on_RetButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Waiting/TopSection/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="toggled" from="CanvasLayer/Panel/Waiting/HBoxContainer/Ready" to="." method="_on_Ready_toggled"]
 [connection signal="pressed" from="CanvasLayer/Panel/Waiting/HBoxContainer/Slime" to="." method="_on_Slime_pressed"]

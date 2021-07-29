@@ -1,8 +1,11 @@
-extends Node2D
+extends Control
 
 var PORT = 1800
 var MAX_CLIENTS = 2
 
+enum states {SPLASH, PRESS_START, MENU, LOBBY}
+var state = states.SPLASH
+var accept_input = true
 
 var _player_status = {}		# {id: ready}
 var _player_label = {}		# {id: label_id }
@@ -29,7 +32,33 @@ func _ready():
 	
 	$CanvasLayer/Panel/Connect/HBoxContainer/Host.connect("pressed", self, "_host_pressed")
 	$CanvasLayer/Panel/Connect/HBoxContainer2/Join.connect("pressed", self, "_join_pressed")
+	
+	$CanvasLayer/PressStart/AnimationPlayer.play("blink")
+	$AnimationPlayer.play("splashscreen")
+	yield($AnimationPlayer, "animation_finished")
+	state = states.PRESS_START
 
+
+func _input(event):
+	var pressed = event.is_action_pressed("ui_accept") or event.is_action_pressed("mb_left") or event.is_action_pressed("mb_right")
+	match state:
+		states.SPLASH:
+			if pressed and accept_input:
+				$CanvasLayer/Splashscreen.visible = false
+				$CanvasLayer/ColorRect.visible = false
+				state = states.PRESS_START
+		states.PRESS_START:
+			if pressed and accept_input:
+				$CanvasLayer/PressStart/PressStartLabel.visible = false
+				$AnimationPlayer.play("toMenu")
+				accept_input = false
+				yield($AnimationPlayer, "animation_finished")
+				state = states.MENU
+				accept_input = true
+		states.MENU:
+			return
+		states.LOBBY:
+			return
 
 # ---------- CONNECTION_HANDLING ----------  #
 func _player_connected(id):
@@ -262,3 +291,22 @@ func _port_opened(result):
 	if not result:
 		_show_connect()
 		$CanvasLayer/Panel/Connect/Error.text = "Port %d couldn't be opened!" % PORT
+
+
+func _on_Credits_pressed():
+	pass # Replace with function body.
+
+
+func _on_Play_pressed():
+	$CanvasLayer/MainMenu.visible = false
+	$CanvasLayer/Panel.visible = true
+
+
+func exit_game():
+	get_tree().quit()
+
+
+func _on_RetButton_pressed():
+	$CanvasLayer/MainMenu.visible = true
+	$CanvasLayer/Panel.visible = false
+	
