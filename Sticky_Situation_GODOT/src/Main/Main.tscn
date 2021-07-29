@@ -55,7 +55,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D3" type="Area2D" parent="."]
+[node name="ice_element" type="Area2D" parent="."]
 position = Vector2( 453.559, 190.865 )
 rotation = 0.555015
 scale = Vector2( 0.4, 0.3 )
@@ -65,10 +65,10 @@ __meta__ = {
 }
 element = ExtResource( 8 )
 
-[node name="icon" type="Sprite" parent="StaticBody2D3"]
+[node name="icon" type="Sprite" parent="ice_element"]
 texture = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ice_element"]
 shape = SubResource( 1 )
 
 [node name="fire_element" parent="." instance=ExtResource( 10 )]
@@ -78,4 +78,4 @@ position = Vector2( 304.984, 289.105 )
 position = Vector2( 370.322, 288.576 )
 
 [connection signal="body_entered" from="StaticBody2D2" to="StaticBody2D2" method="_on_StaticBody2D_body_entered"]
-[connection signal="body_entered" from="StaticBody2D3" to="StaticBody2D3" method="_on_StaticBody2D_body_entered"]
+[connection signal="body_entered" from="ice_element" to="ice_element" method="_on_StaticBody2D_body_entered"]

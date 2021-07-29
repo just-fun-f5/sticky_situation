@@ -30,7 +30,7 @@ onready var body = $Slime2Animation
 onready var anim_player = $Slime2Animation/AnimationPlayer2
 onready var sprites = {
 	"fire" : $Slime2Animation/fire,
-	"ice": $Slime2Animation/slime2,
+	"ice": $Slime2Animation/ice,
 	"slime": $Slime2Animation/slime,
 }
 #hmc
@@ -253,6 +253,7 @@ func _use_skill():
 # ---------------- ELEMENTS ----------------
 func _absorb(element):
 	current_element = element
+	print(element.name)
 	set_current_sprite(element.name.to_lower())
 	
 func set_current_sprite(element):
