@@ -5,47 +5,9 @@ resource_name = "play"
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Team" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="RichTextLabel" parent="Team"]
-margin_right = 108.0
-margin_bottom = 17.0
-text = "Team Just - Fun"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="List" type="RichTextLabel" parent="Team"]
-margin_left = 2.80615
-margin_top = 15.9643
-margin_right = 119.806
-margin_bottom = 74.9643
-text = "Dario Osses
-Mauricio Saldías
-Marcelo Becerra
-Samuel Chavéz
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Thanks" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1" type="RichTextLabel" parent="Thanks"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 150.0
+margin_bottom = 283.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,3 +54,141 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/play = SubResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="Control"]
+margin_left = 9.0
+margin_top = 2.0
+margin_right = 159.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 100, 15 )
+text = "Team Just - Fun"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="."]
+margin_left = -2.0
+margin_right = 38.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="List" type="RichTextLabel" parent="Control2"]
+margin_left = 7.96851
+margin_top = 18.0803
+margin_right = 157.969
+margin_bottom = 78.0803
+rect_min_size = Vector2( 150, 60 )
+text = "Dario Osses
+Mauricio Saldías
+Marcelo Becerra
+Samuel Chavéz"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control3" type="Control" parent="."]
+margin_left = -33.3354
+margin_top = -51.5905
+margin_right = 6.66458
+margin_bottom = -11.5905
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks" type="RichTextLabel" parent="Control3"]
+margin_left = 39.0976
+margin_top = 138.373
+margin_right = 349.098
+margin_bottom = 688.373
+rect_min_size = Vector2( 0, 520 )
+text = "Thankings:
+Thanks for: Slime
+
+author:  John Ivess
+
+source: https://ivess.itch.io/
+
+Thanks for: Ninja
+
+author: Eli Cuaycong
+
+source: https://hajileee.itch.io
+
+thanks for: Computer says no 
+
+author: fontke.com
+
+soruce: https://en.m.fontke.com/font/10743017/
+
+Thanks for: Skeleton
+
+Author: Jesse Munguia
+
+source: https://jesse-m.itch.io/skeleton-pack
+
+Thanks for: NightBorne Warrior
+
+author: creativekind
+
+source: https://creativekind.itch.io/nightborne-warrior"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control4" type="Control" parent="."]
+margin_left = 276.665
+margin_top = -54.5905
+margin_right = 316.665
+margin_bottom = -14.5905
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks" type="RichTextLabel" parent="Control4"]
+margin_left = 51.0976
+margin_top = 140.373
+margin_right = 351.098
+margin_bottom = 690.373
+rect_min_size = Vector2( 0, 520 )
+text = "Thankings:
+Thanks for: Pixel Art Bird
+
+Author: ma9ici4n
+
+source: https://ma9ici4n.itch.io/pixel-art-bird-16x16
+
+Thanks for: Wizard Pack
+
+Author: LuizMelo
+
+source: https://luizmelo.itch.io/wizard-pack
+
+Thanks for: pixel fantasy \"caves\"
+
+Author: Szadi art.
+
+source: https://szadiart.itch.io/pixel-fantasy-caves
+
+Thanks for: Wizard Pack
+
+Author: LuizMelo
+
+source: https://luizmelo.itch.io/wizard-pack
+
+Thanks for: BrickTileMap
+
+Author: ArithMetic
+
+Source: https://arithmetic.itch.io/bricktilemap"
+__meta__ = {
+"_edit_use_anchors_": false
+}
