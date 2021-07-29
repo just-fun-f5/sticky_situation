@@ -199,18 +199,16 @@ func _explode():
 	
 	return "explode"
 
-func _on_EatArea_area_entered(area):
-	if area.is_in_group("Enemies"):
-		enemy_pos.texture = area.get_node("eated").texture
-		captured_enemy = area
+func _on_EatArea_body_entered(body):
+	if body.is_in_group("Enemies"):
+		enemy_pos.texture = body.get_node("eated").texture
+		captured_enemy = body
 		enemy_pos.visible = true
 		eating_timer.start()
 		passive_damage.start(0.5)
 		captured_enemy.visible = false
 		FSM.set_state(FSM.states.eating)
 		eating_collision_shape.disabled = true
-		
-		
 
 func _on_eatingTimer_timeout():
 	captured_enemy.visible = true
@@ -262,9 +260,4 @@ func set_current_sprite(element):
 		sprites[key].visible = (key == element)
 
 # ---------------- MANA/HP ---------------
-
-
-
-
-
-
+		

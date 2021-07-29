@@ -75,7 +75,7 @@ shape = SubResource( 1 )
 position = Vector2( 304.984, 289.105 )
 
 [node name="test_enemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 376.639, 284.466 )
+position = Vector2( 370.322, 288.576 )
 
 [connection signal="body_entered" from="StaticBody2D2" to="StaticBody2D2" method="_on_StaticBody2D_body_entered"]
 [connection signal="body_entered" from="StaticBody2D3" to="StaticBody2D3" method="_on_StaticBody2D_body_entered"]
