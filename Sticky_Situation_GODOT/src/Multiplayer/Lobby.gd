@@ -294,6 +294,7 @@ func _port_opened(result):
 
 
 func _on_Credits_pressed():
+	get_tree().change_scene("res://src/Main/Credits.tscn")
 	pass # Replace with function body.
 
 
