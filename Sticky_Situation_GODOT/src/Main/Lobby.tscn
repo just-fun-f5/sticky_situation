@@ -394,7 +394,8 @@ custom_fonts/font = SubResource( 38 )
 text = "Credits"
 script = ExtResource( 8 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/MainMenu/Credits"]

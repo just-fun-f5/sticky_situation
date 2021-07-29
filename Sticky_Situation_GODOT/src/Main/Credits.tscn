@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Main/Credits.gd" type="Script" id=1]
+[ext_resource path="res://src/Level/Parallax_Background/ParallaxBackground.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "play"
-length = 10.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Thanks:rect_position")
 tracks/0/interp = 1
@@ -12,7 +13,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1, 10 ),
+"times": PoolRealArray( -0.1, 15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, -1720 ) ]
@@ -151,5 +152,11 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/play = SubResource( 1 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+offset = Vector2( 0, 400 )
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 400 )
+follow_viewport_enable = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
