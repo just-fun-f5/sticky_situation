@@ -1,4 +1,4 @@
-extends Entity
+extends KinematicBody2D
 
 const UP = Vector2.UP
 const WALL_JUMP_VELOCITY = Vector2(400, -250)

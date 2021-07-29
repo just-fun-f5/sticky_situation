@@ -533,6 +533,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=79]
 loop = true
+step = 0.12
 tracks/0/type = "value"
 tracks/0/path = NodePath("slime:animation")
 tracks/0/interp = 1
@@ -552,10 +553,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.12, 0.24, 0.36, 0.48 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ 0, 1, 2, 3, 4 ]
 }
 
 [sub_resource type="Animation" id=80]
@@ -778,11 +779,14 @@ frame = 6
 
 [node name="slime" type="AnimatedSprite" parent="."]
 frames = SubResource( 35 )
-animation = "Wall_Slide"
+animation = "Move"
+frame = 3
 
 [node name="fire" type="AnimatedSprite" parent="."]
+position = Vector2( 0.166855, -4.17138 )
 frames = SubResource( 69 )
-animation = "Idle"
+animation = "Move"
+frame = 3
 
 [node name="ice" type="Sprite" parent="."]
 
