@@ -25,6 +25,9 @@ var Arrow = preload("res://src/Actors/Prisoner/Arrow.tscn")
 # networking
 puppet var puppet_pos = Vector2()
 puppet var puppet_direction = 0
+
+onready var hmc = $hmc
+
 #Animation nodes
 onready var body = $SlimeNode
 onready var anim_player = $SlimeNode/AnimatedSprite2
@@ -43,7 +46,7 @@ func _ready():
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
 	if !Game.is_net_master(self):
-		$CanvasLayer/UI.hide()
+		hmc.visible(false)
 
 # Configure for multiplayer
 func init(nid):
