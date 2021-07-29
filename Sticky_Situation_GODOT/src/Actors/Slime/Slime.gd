@@ -66,7 +66,8 @@ func _ready():
 	hmc._set_HP(100)
 	hmc._set_MP(100)
 	if !Game.is_net_master(self):
-		$CanvasLayer/UI.hide()
+		hmc.visible(false)
+		skwh.visible(false)
 
 # Configure for multiplayer
 func init(nid):

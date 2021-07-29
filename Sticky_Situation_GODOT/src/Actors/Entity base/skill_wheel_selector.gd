@@ -18,6 +18,10 @@ export (float) var light_margin = 0.5
 onready var wheel = $wheel
 onready var tween: Tween = $Tween
 
+func visible(status):
+	$wheel/p_eat/Icon.visible = status
+	$wheel/p_explode/Icon.visible = status
+	$wheel/p_throw/Icon.visible = status
 
 func _ready():
 	update_rects()

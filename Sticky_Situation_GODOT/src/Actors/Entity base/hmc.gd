@@ -10,6 +10,9 @@ onready var HP_Bar = $UI/HP/HPBar
 var HP: float = 100 setget _set_HP
 var MP: float = 100 setget _set_MP
 
+func visible(status):
+	$UI.visible = status
+
 func _ready():
 	self.hit_HP(50)
 
