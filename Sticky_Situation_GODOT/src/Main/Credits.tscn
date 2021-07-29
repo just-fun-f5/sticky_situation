@@ -21,21 +21,19 @@ __meta__ = {
 }
 
 [node name="List" type="RichTextLabel" parent="Team"]
-margin_left = 2.80615
-margin_top = 15.9643
-margin_right = 119.806
-margin_bottom = 74.9643
+margin_left = 3.0
+margin_top = 16.0
+margin_right = 120.0
+margin_bottom = 79.0
 text = "Dario Osses
 Mauricio Saldías
 Marcelo Becerra
-Samuel Chavéz
-"
+Samuel Chavéz"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Thanks" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -43,9 +41,84 @@ __meta__ = {
 }
 
 [node name="1" type="RichTextLabel" parent="Thanks"]
-visible = false
+margin_left = 6.23628
+margin_top = 81.1091
+margin_right = 330.236
+margin_bottom = 601.109
+text = "Thanks for: BrickTileMap
+
+Author: ArithMetic
+
+source: https://arithmetic.itch.io/bricktilemap
+
+Thanks for: Pixel Art Bird
+
+Author: ma9ici4n
+
+source: https://ma9ici4n.itch.io/pixel-art-bird-16x16
+
+Thanks for: NightBorne Warrior
+
+author: creativekind
+
+source: https://creativekind.itch.io/nightborne-warrior
+
+Thanks for: Skeleton
+
+Author: Jesse Munguia
+
+source: https://jesse-m.itch.io/skeleton-pack?download
+
+Thanks for: Hook
+
+author: Optional
+
+source: https://gitlab.com/godotdemos/hook-demo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks2" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="RichTextLabel" parent="Thanks2"]
+margin_left = 314.0
+margin_top = 77.0
+margin_right = 642.0
+margin_bottom = 597.0
+text = "Thanks for: Ninja
+
+author: Eli Cuaycong
+
+source: https://hajileee.itch.io
+
+Thanks for: Slime
+
+author:  John Ivess
+
+source: https://ivess.itch.io/slime-animations-pack
+
+thanks for: Computer says no 
+
+author: fontke.com
+
+soruce: https://en.m.fontke.com/font/10743017/
+
+Thanks for: Wizard Pack
+
+Author: LuizMelo
+
+source: https://luizmelo.itch.io/wizard-pack
+
+Thanks for: pixel fantasy \"caves\"
+
+Author: Szadi art.
+
+source: https://szadiart.itch.io/pixel-fantasy-caves"
 __meta__ = {
 "_edit_use_anchors_": false
 }
