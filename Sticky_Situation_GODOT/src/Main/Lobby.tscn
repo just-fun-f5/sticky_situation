@@ -10,190 +10,190 @@
 [ext_resource path="res://src/Main/menuButton.gd" type="Script" id=8]
 [ext_resource path="res://assets/art/tileset/AutoBrick/brickTileset.png" type="Texture" id=9]
 
-[sub_resource type="DynamicFont" id=39]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 7 )
 
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 128, 32, 32 )
+
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 32, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 64, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 96, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 128, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 5 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 160, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
-region = Rect2( 96, 96, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 128, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
-region = Rect2( 32, 128, 32, 32 )
+region = Rect2( 96, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 128, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 5 )
-region = Rect2( 96, 128, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 5 )
-region = Rect2( 128, 128, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 5 )
-region = Rect2( 160, 128, 32, 32 )
+atlas = ExtResource( 6 )
+region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 6 )
-region = Rect2( 64, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 6 )
-region = Rect2( 96, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 6 )
-region = Rect2( 128, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 6 )
 region = Rect2( 160, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 6 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 6 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 5 )
-region = Rect2( 96, 64, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 5 )
 region = Rect2( 96, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 5 )
 region = Rect2( 128, 32, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=37]
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 6 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=36]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Dead",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "Eat",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "Explode",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "Wall_Slide",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 31 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
-"name": "Fall",
+"name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "Move",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "Explode",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 35 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=37]
 resource_name = "blink"
 length = 2.0
 loop = true
@@ -210,20 +210,19 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=41]
+[sub_resource type="DynamicFont" id=38]
 size = 48
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=43]
+[sub_resource type="DynamicFont" id=39]
 size = 32
 font_data = ExtResource( 7 )
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=40]
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=41]
 
-[sub_resource type="Animation" id=38]
-resource_name = "splashscreen"
+[sub_resource type="Animation" id=42]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
@@ -250,8 +249,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=42]
-resource_name = "toMenu"
+[sub_resource type="Animation" id=43]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/PressStart/Node2D:position")
 tracks/0/interp = 1
@@ -321,7 +319,7 @@ modulate = Color( 1, 1, 1, 0.446026 )
 margin_top = 384.0
 margin_right = 1024.0
 margin_bottom = 425.0
-custom_fonts/font = SubResource( 39 )
+custom_fonts/font = SubResource( 1 )
 text = "Press Enter"
 align = 1
 __meta__ = {
@@ -341,14 +339,14 @@ tile_data = PoolIntArray( 262192, 0, 196608, 262193, 0, 262147, 262194, 0, 1, 26
 position = Vector2( 656, 112 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
-frames = SubResource( 37 )
+frames = SubResource( 36 )
 animation = "Idle"
 frame = 2
 playing = true
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PressStart"]
-anims/blink = SubResource( 40 )
+anims/blink = SubResource( 37 )
 
 [node name="MainMenu" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
@@ -366,7 +364,7 @@ margin_top = 640.0
 margin_right = 576.0
 margin_bottom = 688.0
 rect_min_size = Vector2( 128, 48 )
-custom_fonts/font = SubResource( 41 )
+custom_fonts/font = SubResource( 38 )
 text = "Play"
 script = ExtResource( 8 )
 __meta__ = {
@@ -393,7 +391,7 @@ margin_top = 788.0
 margin_right = 608.001
 margin_bottom = 836.0
 rect_min_size = Vector2( 192, 48 )
-custom_fonts/font = SubResource( 41 )
+custom_fonts/font = SubResource( 38 )
 text = "Credits"
 script = ExtResource( 8 )
 __meta__ = {
@@ -422,7 +420,7 @@ margin_top = 836.0
 margin_right = 576.0
 margin_bottom = 884.0
 rect_min_size = Vector2( 128, 48 )
-custom_fonts/font = SubResource( 41 )
+custom_fonts/font = SubResource( 38 )
 text = "Exit"
 script = ExtResource( 8 )
 __meta__ = {
@@ -530,7 +528,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Connect"]
 margin_right = 250.0
 margin_bottom = 21.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Name:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Connect"]
@@ -545,7 +543,7 @@ __meta__ = {
 margin_right = 186.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Player"
 caret_blink = true
 caret_blink_speed = 0.5
@@ -555,14 +553,14 @@ margin_left = 190.0
 margin_right = 250.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 60, 0 )
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Host"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel/Connect"]
 margin_top = 60.0
 margin_right = 250.0
 margin_bottom = 81.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "IP:"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/Connect"]
@@ -577,7 +575,7 @@ __meta__ = {
 margin_right = 186.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "127.0.0.1"
 caret_blink = true
 caret_blink_speed = 0.5
@@ -587,7 +585,7 @@ margin_left = 190.0
 margin_right = 250.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 60, 0 )
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Join"
 
 [node name="Error" type="Label" parent="CanvasLayer/Panel/Connect"]
@@ -601,7 +599,7 @@ align = 1
 margin_top = 138.0
 margin_right = 250.0
 margin_bottom = 165.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Return"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -629,18 +627,18 @@ margin_bottom = 27.0
 alignment = 2
 
 [node name="Exit" type="Button" parent="CanvasLayer/Panel/Waiting/TopSection"]
-material = SubResource( 1 )
+material = SubResource( 40 )
 margin_left = 334.0
 margin_right = 356.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "x"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Waiting"]
 margin_top = 31.0
 margin_right = 356.0
 margin_bottom = 52.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Players:"
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Panel/Waiting"]
@@ -666,13 +664,13 @@ margin_bottom = 150.0
 margin_right = 4.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_styles/separator = SubResource( 2 )
+custom_styles/separator = SubResource( 41 )
 
 [node name="Ready" type="CheckButton" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
 margin_left = 8.0
 margin_right = 178.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Not Ready"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -683,13 +681,13 @@ margin_left = 182.0
 margin_right = 186.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_styles/separator = SubResource( 2 )
+custom_styles/separator = SubResource( 41 )
 
 [node name="Slime" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
 margin_left = 190.0
 margin_right = 252.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Slime"
 
 [node name="VSeparator3" type="VSeparator" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
@@ -697,13 +695,13 @@ margin_left = 256.0
 margin_right = 260.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_styles/separator = SubResource( 2 )
+custom_styles/separator = SubResource( 41 )
 
 [node name="Prisoner" type="Button" parent="CanvasLayer/Panel/Waiting/HBoxContainer"]
 margin_left = 264.0
 margin_right = 356.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 39 )
 text = "Prisoner"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -726,8 +724,8 @@ transform = Transform2D( 2, 0, 0, 2, 0, 400 )
 follow_viewport_enable = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/splashscreen = SubResource( 38 )
-anims/toMenu = SubResource( 42 )
+anims/splashscreen = SubResource( 42 )
+anims/toMenu = SubResource( 43 )
 
 [connection signal="pressed" from="CanvasLayer/MainMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/Credits" to="." method="_on_Credits_pressed"]

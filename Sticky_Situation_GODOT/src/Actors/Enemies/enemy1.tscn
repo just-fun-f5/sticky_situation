@@ -445,7 +445,6 @@ position = Vector2( -1.59099, -2.12132 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 45 )
 animation = "Attack"
-frame = 13
 playing = true
 
 [node name="eated" type="Sprite" parent="."]
