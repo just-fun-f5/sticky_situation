@@ -31,7 +31,7 @@ onready var anim_player = $Slime2Animation/AnimationPlayer2
 onready var sprites = {
 	"fire" : $Slime2Animation/fire,
 	"ice": $Slime2Animation/slime2,
-	"slime": $Slime2Animation/slime2,
+	"slime": $Slime2Animation/slime,
 }
 #hmc
 onready var hmc = $hmc
@@ -46,6 +46,7 @@ onready var wall_slide_cooldown = $WallSlideCooldown
 onready var wall_slide_sticky_timer = $WallSlideStickyTimer
 
 #Skill Variables
+onready var skwh = $skill_wheel_selector/SkillWheel
 export (Resource) var current_element
 export (Array, Resource) var avaible_skills
 var current_skill = 0
@@ -163,6 +164,8 @@ func _handle_wall_slide_sticking():
 
 
 # ---------------- SKILLS ----------------
+
+
 func _throw():
 	#	throw a "" of the current element,
 	#	that affect the first object impacted.
@@ -173,7 +176,7 @@ func _throw():
 	slime_ball_instance.launch(facing)
 	var damage = avaible_skills[current_skill].damage * current_element.damage_factor
 	var mana  = avaible_skills[current_skill].mana
-	hmc.hit_MP(-mana)
+	hmc.hit_MP(mana)
 	damage += 1
 	# missil.launch
 	
@@ -182,7 +185,7 @@ func _explode():
 	#	and drain all the remaining mana
 	#$Current_Element.explode()
 	var mana  = avaible_skills[current_skill].mana
-	hmc.hit_MP(-mana)
+	hmc.hit_MP(mana)
 	return "explode"
 
 func _on_EatArea_area_entered(area):
@@ -219,13 +222,13 @@ func _eat():
 	var mana  = avaible_skills[current_skill].mana
 	
 	if FSM.state in [FSM.states["idle"], FSM.states["run"]]:
-		hmc.hit_MP(-mana)
+		hmc.hit_MP(mana)
 		return "eat"
 	
 func _change_skill(direction):
 	var pos = 1 if (direction > 0) else 2
 	current_skill = int(abs(current_skill + pos)) % 3
-	$SkillWheel/skill_wheel_selector/SkillWheel.move_wheel(direction)
+	skwh.move_wheel(direction)
 	print(avaible_skills[current_skill].skill_name)
 
 func _use_skill():

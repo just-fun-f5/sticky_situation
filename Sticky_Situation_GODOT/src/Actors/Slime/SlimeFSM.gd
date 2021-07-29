@@ -113,6 +113,10 @@ func _get_transition(delta):
 			elif parent.wall_direction == 0:
 				return states.fall
 				
+		#State Eating
+		states.eat:
+			if not is_skill_used:
+				return states.idle
 	return null
 
 func _enter_state(new_state, old_state):
