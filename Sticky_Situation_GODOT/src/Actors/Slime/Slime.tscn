@@ -152,7 +152,7 @@ region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 12 )
-region = Rect2( 96, 96, 32, 32 )
+region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=36]
 animations = [ {
@@ -167,11 +167,6 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "Wall_Slide",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "Eat",
 "speed": 5.0
@@ -194,6 +189,11 @@ animations = [ {
 "frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "Explode",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 35 ) ],
+"loop": true,
+"name": "Fall",
 "speed": 5.0
 } ]
 
@@ -327,7 +327,7 @@ region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 11 )
-region = Rect2( 128, 32, 32, 32 )
+region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=70]
 animations = [ {
@@ -342,11 +342,6 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
-"loop": true,
-"name": "Wall_Slide",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
 "loop": true,
 "name": "Eat",
 "speed": 5.0
@@ -369,6 +364,11 @@ animations = [ {
 "frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
 "loop": true,
 "name": "Explode",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 69 ) ],
+"loop": true,
+"name": "Fall",
 "speed": 5.0
 } ]
 
