@@ -4,6 +4,7 @@ extends KinematicBody2D
 const SPEED = 100
 var velocity
 var direction = Vector2(0,0)
+var move_dir = 1
 
 # SKILLS
 var HP = 100
@@ -35,12 +36,15 @@ func physics_process(delta):
 			anim_player.play("Idle")
 			if lef_raycast.is_colliding():
 				current_state = states.run
-				moveTo(-1)
+				move_dir = -1
+				moveTo()
 				
 			if right_raycast.is_colliding():
 				current_state = states.run
-				moveTo(1)
-				
+				move_dir = 1
+				moveTo()
+			
+			
 		states.attack:
 			print("attack")
 			anim_player.play("Attack")
@@ -49,14 +53,15 @@ func physics_process(delta):
 			anim_player.play("Walk")
 		states.run:
 			print("Run")
+			moveTo()
 			anim_player.play("Run")
 		states.dead:
 			print("Dead")
 			anim_player.play("Dead")
 			dead_timer.start()
 			
-func moveTo(direction):
-	velocity.x = SPEED * direction
+func moveTo():
+	velocity.x = SPEED * move_dir
 	move_and_slide(velocity)
 	
 #DIE

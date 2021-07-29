@@ -477,7 +477,6 @@ position = Vector2( -4.37208, -0.59834 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 58 )
 animation = "Idle"
-frame = 5
 playing = true
 
 [node name="eated" type="Sprite" parent="."]
