@@ -180,12 +180,22 @@ func _throw():
 	damage += 1
 	# missil.launch
 	
+	
+export(PackedScene) var blood : PackedScene
+
 func _explode():
 	#	make a radial explosion, that affects "x" area
 	#	and drain all the remaining mana
 	#$Current_Element.explode()
 	var mana  = avaible_skills[current_skill].mana
 	hmc.hit_MP(mana)
+	
+	for i in range(45):
+		var blood_instance : Area2D = blood.instance()
+#		blood_instance.global_position = slime_node.position
+		blood_instance.global_position = position
+		get_parent().add_child(blood_instance)
+	
 	return "explode"
 
 func _on_EatArea_area_entered(area):

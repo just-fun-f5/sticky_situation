@@ -47,7 +47,7 @@ func create_slime(nid):
 export(PackedScene) var blood : PackedScene
 
 func _physics_process(delta: float) -> void:
-	if(Input.is_action_just_pressed("mb_left")):
+	if(Input.is_action_just_pressed("mb_left") and false):
 		for i in range(45):
 			var blood_instance : Area2D = blood.instance()
 #			blood_instance.global_position = slime_node.position
